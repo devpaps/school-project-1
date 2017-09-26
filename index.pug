@@ -1,56 +1,66 @@
-header
-	.text.wrapper
-		a.logo(href="#" tabindex="1")
-			h1 Lars Jönsson
-		nav.nav
-			ul
-				li
-					a(href="#" title="Det här är jag" tabindex="2") Om mig
-				li
-					a(href="#" title="Vad jag kan erbjuda dig" tabindex="3") Mina tjänster
-				li
-					a(href="#" title="Mina färdiga arbeten" tabindex="4") Showcase
-				li
-					a(href="#" title="Maila mig" tabindex="5") Kontakt
+doctype html
+html
+	head
+		meta(charset='UTF-8')
+		title Ex uppgift *css grid*
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		link(href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700', rel='stylesheet')
+		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css')
+		link(rel='stylesheet', href='assets/css/style.css')
+	body
+		header
+			.text.wrapper
+				a.logo(href="#" tabindex="1")
+					h1 Lars Jönsson
+				nav.nav
+					ul
+						li
+							a(href="#" title="Det här är jag" tabindex="2") Om mig
+						li
+							a(href="#" title="Vad jag kan erbjuda dig" tabindex="3") Mina tjänster
+						li
+							a(href="#" title="Mina färdiga arbeten" tabindex="4") Showcase
+						li
+							a(href="#" title="Maila mig" tabindex="5") Kontakt
 
-	article.about
-		p div Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt labore consectetur fugit voluptas quidem quam, tempore enim optio iste neque quaerat quae nobis voluptatem doloremque quas consequatur ex dolorum error.
+			article.about
+				p div Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt labore consectetur fugit voluptas quidem quam, tempore enim optio iste neque quaerat quae nobis voluptatem doloremque quas consequatur ex dolorum error.
 
 
-main
-	.features.wrapper
-		.card.test-1
-			figure
-				img.gizmo(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/511975/3.svg", alt="En bild på våran hund Gizmo")
-			article
-				p div Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam quaerat modi blanditiis numquam sit, aliquam exercitationem pariatur asperiores? Repudiandae dolore placeat doloremque impedit rem soluta dolores harum blanditiis ducimus eveniet.
-		.card.test-2
-			figure
-				img.me(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/511975/1.svg", alt="En bild på mig")
-			article
-				p div Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius dolore vel quam doloribus consequuntur inventore numquam in officiis quo ullam, earum obcaecati culpa doloremque, incidunt nulla error repudiandae? Ab, eum?
-		.card.test-3
-			figure
-				img.family(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/511975/2.svg", alt="En bild på min familj")
-			article
-				p div Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius dolore vel quam doloribus consequuntur inventore numquam in officiis quo ullam, earum obcaecati culpa doloremque, incidunt nulla error repudiandae? Ab, eum?
-				
+		main
+			.features.wrapper
+				.card.test-1
+					figure
+						img.gizmo(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/511975/3.svg", alt="En bild på våran hund Gizmo")
+					article
+						p div Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam quaerat modi blanditiis numquam sit, aliquam exercitationem pariatur asperiores? Repudiandae dolore placeat doloremque impedit rem soluta dolores harum blanditiis ducimus eveniet.
+				.card.test-2
+					figure
+						img.me(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/511975/1.svg", alt="En bild på mig")
+					article
+						p div Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius dolore vel quam doloribus consequuntur inventore numquam in officiis quo ullam, earum obcaecati culpa doloremque, incidunt nulla error repudiandae? Ab, eum?
+				.card.test-3
+					figure
+						img.family(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/511975/2.svg", alt="En bild på min familj")
+					article
+						p div Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius dolore vel quam doloribus consequuntur inventore numquam in officiis quo ullam, earum obcaecati culpa doloremque, incidunt nulla error repudiandae? Ab, eum?
+						
 
-footer.wrapper
-	address
-		.one
-			h2 Adress
-			p Storgatan 1
-			p 123 45 Lillestad
-		.two
-			h2 Telefon
-			p
-				a(href="tel: 0123 - 456 789") (+46) 123 - 456 789
-			p
-				a(href="tel: 070 - 123 45 678") (+46) 70 - 123 45 678
-		.three
-			h2 E-post
-			p
-				a(href="mailto: info@stortego.se") info@stortego.se
-			p
-				a(href="mailto: sales@stortgo.se") sales@stortgo.se
+		footer.wrapper
+			address
+				.one
+					h2 Adress
+					p Storgatan 1
+					p 123 45 Lillestad
+				.two
+					h2 Telefon
+					p
+						a(href="tel: 0123 - 456 789") (+46) 123 - 456 789
+					p
+						a(href="tel: 070 - 123 45 678") (+46) 70 - 123 45 678
+				.three
+					h2 E-post
+					p
+						a(href="mailto: info@stortego.se") info@stortego.se
+					p
+						a(href="mailto: sales@stortgo.se") sales@stortgo.se

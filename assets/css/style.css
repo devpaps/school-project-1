@@ -1,0 +1,159 @@
+html {
+  background: #04070E; }
+
+body {
+  font-family: 'Playfair Display', serif; }
+
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto; }
+
+header {
+  background: #fff url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/511975/caspar-rubin-224229.jpg) center center;
+  background-size: cover;
+  height: 500px;
+  position: relative; }
+  header .text {
+    display: flex;
+    justify-content: space-between; }
+    header .text .logo {
+      text-decoration: none; }
+      header .text .logo h1 {
+        color: #fafafa;
+        margin: 0.3em; }
+    header .text .nav {
+      display: flex;
+      align-items: center; }
+      header .text .nav ul {
+        padding: 0;
+        margin: 0; }
+        header .text .nav ul li {
+          display: inline;
+          list-style: none; }
+          header .text .nav ul li a {
+            color: #fff;
+            margin: 1em;
+            text-decoration: none;
+            padding: 0.5em 0; }
+  header .about {
+    position: absolute;
+    width: 50%;
+    top: 140px;
+    right: 80px;
+    padding: 1em; }
+    header .about p {
+      color: #fff; }
+
+main {
+  background: #f6f6f6;
+  padding-bottom: 4em; }
+  main .features {
+    display: flex; }
+    @supports (display: grid) {
+      main .features {
+        display: grid;
+        grid-gap: 1em;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr; } }
+    main .features .card {
+      background: #fff;
+      border: 1px solid #dadada;
+      margin: 1em 0; }
+      @supports not (display: grid) {
+        main .features .card {
+          display: flex;
+          flex-direction: column; } }
+      main .features .card .gizmo {
+        right: 40px; }
+      main .features .card .me {
+        margin: 0 auto; }
+      main .features .card .family {
+        position: relative;
+        right: -63px; }
+      main .features .card img {
+        display: block;
+        max-width: 80%;
+        border: 10px solid #fff;
+        border-radius: 50%;
+        position: relative;
+        top: -70px; }
+      main .features .card article {
+        background: #fff; }
+        main .features .card article h2 {
+          padding: 0 1em; }
+        main .features .card article p {
+          padding: 1em; }
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em; }
+  footer address {
+    font-style: normal; }
+
+@media screen and (max-width: 968px) {
+  header .text {
+    display: block; }
+    header .text .logo h1 {
+      margin: 0;
+      padding-top: 1em;
+      text-align: center; }
+    header .text .nav {
+      justify-content: center;
+      margin-top: 3em; }
+  header .about {
+    width: 70%;
+    right: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  main .features {
+    flex-direction: column; }
+    @supports (display: grid) {
+      main .features {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr; } }
+    main .features .test-1 {
+      order: 2;
+      padding-top: 4em; }
+    main .features .test-2 {
+      order: 1; }
+    main .features .test-3 {
+      order: 3;
+      padding-top: 4em; }
+    main .features .card {
+      background: #f6f6f6;
+      margin: 1em 0;
+      border: none; }
+      main .features .card img {
+        width: 200px; }
+      main .features .card .gizmo {
+        margin: 0 auto;
+        right: 0; }
+      main .features .card .family {
+        right: 0;
+        margin: 0 auto; }
+      main .features .card article {
+        border: 1px solid #dadada;
+        margin: -6em 2em 0;
+        padding-top: 3em; } }
+
+@media screen and (max-width: 456px) {
+  header .about {
+    width: 80%; }
+    header .about .nav ul li a {
+      margin: 0.5em; }
+  footer {
+    background: #fff;
+    flex-direction: column;
+    text-align: center; }
+    footer h2 {
+      margin-bottom: 0; }
+    footer h2 + p {
+      margin-top: 0.2em; } }
+
+@media screen and (max-width: 380px) {
+  header .about {
+    margin-top: 4em; }
+    header .about .text .nav {
+      flex-wrap: wrap; } }
