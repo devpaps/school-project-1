@@ -11,7 +11,11 @@ header {
   height: 500px;
   position: relative; }
   header .text {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between; }
     header .text .logo {
       text-decoration: none; }
@@ -21,7 +25,11 @@ header {
     header .text input#menu, header .text label {
       display: none; }
     header .text .nav {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center; }
       header .text .nav ul {
         padding: 0;
@@ -47,6 +55,8 @@ main {
   background: #f6f6f6;
   padding-bottom: 4em; }
   main .features {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex; }
     @supports (display: grid) {
       main .features {
@@ -60,7 +70,12 @@ main {
       margin: 1em 0; }
       @supports not (display: grid) {
         main .features .card {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
           flex-direction: column; } }
       main .features .card .gizmo {
         right: 40px; }
@@ -87,7 +102,11 @@ footer {
   padding: 2em;
   background: #fff; }
   footer address {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     font-style: normal; }
 
@@ -111,33 +130,43 @@ footer {
         background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/511975/cd-icon-menu.svg) no-repeat left;
         padding-left: 50px; }
     header .text .nav {
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
       justify-content: center;
       margin-top: 3em; }
     header .text .menu-content {
       max-height: 0;
       overflow: hidden; }
-      header .text .menu-content ul {
+      header .text .menu-content ul li a {
         display: block; }
-        header .text .menu-content ul li a {
-          display: block; }
   header .about {
     width: 70%;
     right: 0;
     top: 50%;
     left: 50%;
+    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
   main .features {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column; }
     @supports (display: grid) {
       main .features {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr; } }
     main .features .test-1 {
+      -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
       order: 2;
       padding-top: 4em; }
     main .features .test-2 {
+      -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
       order: 1; }
     main .features .test-3 {
+      -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
       order: 3;
       padding-top: 4em; }
     main .features .card {
@@ -163,6 +192,9 @@ footer {
     header .text .nav ul li a {
       margin: 1em 0.6em; }
   footer address {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     text-align: center; }
   footer h2 {
@@ -174,4 +206,5 @@ footer {
   header .about {
     margin-top: 4em; }
     header .about .text .nav {
+      -ms-flex-wrap: wrap;
       flex-wrap: wrap; } }

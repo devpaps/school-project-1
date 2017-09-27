@@ -6,22 +6,25 @@ html
 		meta(name='viewport', content='width=device-width, initial-scale=1')
 		link(href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700', rel='stylesheet')
 		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css')
-		link(rel='stylesheet', href='assets/css/style.css')
+		link(rel='stylesheet', href='/assets/css/style.css')
 	body
 		header
 			.text.wrapper
 				a.logo(href="#" tabindex="1")
 					h1 Lars Jönsson
-				nav.nav
-					ul
-						li
-							a(href="#" title="Det här är jag" tabindex="2") Om mig
-						li
-							a(href="#" title="Vad jag kan erbjuda dig" tabindex="3") Mina tjänster
-						li
-							a(href="#" title="Mina färdiga arbeten" tabindex="4") Showcase
-						li
-							a(href="#" title="Maila mig" tabindex="5") Kontakt
+				.dropdown-menu
+					input(type="checkbox" id="menu")
+					label(for="menu") Meny
+					nav.nav.menu-content
+						ul
+							li
+								a(href="#" title="Det här är jag" tabindex="2") Om mig
+							li
+								a(href="#" title="Vad jag kan erbjuda dig" tabindex="3") Mina tjänster
+							li
+								a(href="#" title="Mina färdiga arbeten" tabindex="4") Showcase
+							li
+								a(href="#" title="Maila mig" tabindex="5") Kontakt
 
 			article.about
 				p div Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt labore consectetur fugit voluptas quidem quam, tempore enim optio iste neque quaerat quae nobis voluptatem doloremque quas consequatur ex dolorum error.
