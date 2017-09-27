@@ -13,6 +13,7 @@ header
 		display: flex
 		justify-content: space-between
 		align-items: center
+		padding-top: 1em
 		.logo
 			text-decoration: none
 			h1
@@ -39,6 +40,9 @@ header
 						margin: 1em
 						text-decoration: none
 						padding: 0.5em 0
+						transition: color 300ms ease
+						&:hover
+							color: lightgrey
 	
 	.about
 		width: 50%
@@ -117,7 +121,7 @@ footer
 					padding: 1em
 					cursor: pointer
 					display: block
-					float: right
+					margin: 0 auto
 				#toogle
 					&:checked + .menu
 						display: block
@@ -127,7 +131,6 @@ footer
 				width: 100%
 				background: #fff
 				padding: 0
-				clear: right
 				ul
 					li
 						a
@@ -139,8 +142,9 @@ footer
 			z-index: -1
 			width: 80%
 			top: 40%
-			right: 0
-			margin-right: 0gulp
+			padding: 0 2em
+			right: unset
+			margin-right: 0
 	main
 		.features
 			@supports (display: grid)

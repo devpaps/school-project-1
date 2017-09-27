@@ -13,7 +13,8 @@ header {
   header .text {
     display: flex;
     justify-content: space-between;
-    align-items: center; }
+    align-items: center;
+    padding-top: 1em; }
     header .text .logo {
       text-decoration: none; }
       header .text .logo h1 {
@@ -38,7 +39,10 @@ header {
             color: #fff;
             margin: 1em;
             text-decoration: none;
-            padding: 0.5em 0; }
+            padding: 0.5em 0;
+            transition: color 300ms ease; }
+            header .text .nav ul li a:hover {
+              color: lightgrey; }
   header .about {
     width: 50%;
     position: absolute;
@@ -116,7 +120,7 @@ footer {
           padding: 1em;
           cursor: pointer;
           display: block;
-          float: right; }
+          margin: 0 auto; }
         header .text .dropdown-menu #toogle:checked + .menu {
           display: block; }
       header .text .nav {
@@ -124,8 +128,7 @@ footer {
         text-align: center;
         width: 100%;
         background: #fff;
-        padding: 0;
-        clear: right; }
+        padding: 0; }
         header .text .nav ul li a {
           display: block;
           border-bottom: 1px solid lightgrey;
@@ -135,7 +138,8 @@ footer {
       z-index: -1;
       width: 80%;
       top: 40%;
-      right: 0;
+      padding: 0 2em;
+      right: unset;
       margin-right: 0; }
   main .features {
     flex-direction: column; }
