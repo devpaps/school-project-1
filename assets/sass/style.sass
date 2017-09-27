@@ -12,16 +12,22 @@ header
 	.text
 		display: flex
 		justify-content: space-between
+		align-items: center
 		.logo
 			text-decoration: none
 			h1
 				color: #fafafa
-				margin: 0.3em
-		input#menu, label
-			display: none
+				margin: 0
+				letter-spacing: 2px
+		.dropdown-menu
+			label
+				display: none
+			#toogle
+				display: none
 		.nav
 			display: flex
 			align-items: center
+			padding: 1em
 			ul
 				padding: 0
 				margin: 0
@@ -35,11 +41,12 @@ header
 						padding: 0.5em 0
 	
 	.about
-		position: absolute
 		width: 50%
-		top: 140px
-		right: 80px
-		padding: 1em
+		position: absolute
+		top: 50%
+		right: 0
+		margin-right: 3em
+		line-height: 1.4
 		p
 			color: #fff
 
@@ -92,6 +99,7 @@ footer
 
 @media screen and (max-width: 968px)
 	header
+		z-index: 0
 		.text
 			display: block
 			.logo
@@ -101,34 +109,38 @@ footer
 					text-align: center
 			.dropdown-menu
 				height: 100%
-				padding-top: 1em
-				.input#menu
-					&:checked label
-						background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/511975/error.svg) no-repeat 15px
-					&:checked ~ .menu-content
-						max-height: 100%
+				z-index: 2
 				label
+					width: 1em
+					color: #fff
+					font-size: 1.5em
+					padding: 1em
 					cursor: pointer
-					display: inline-block
-					background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/511975/cd-icon-menu.svg) no-repeat left
-					padding-left: 50px
-			.nav
-				justify-content: center
-				margin-top: 3em
-			.menu-content
-				max-height: 0
-				overflow: hidden
-				ul
 					display: block
+					float: right
+				#toogle
+					&:checked + .menu
+						display: block
+			.nav
+				display: none
+				text-align: center
+				width: 100%
+				background: #fff
+				padding: 0
+				clear: right
+				ul
 					li
 						a
 							display: block
+							border-bottom: 1px solid lightgrey
+							margin: 0
+							color: #000
 		.about
-			width: 70%
+			z-index: -1
+			width: 80%
+			top: 40%
 			right: 0
-			top: 50%
-			left: 50%
-			transform: translate(-50%,-50%)
+			margin-right: 0
 	main
 		.features
 			@supports (display: grid)
@@ -168,7 +180,7 @@ footer
 				ul
 					li
 						a
-							margin: 1em 0.6em
+							padding: 1em
 	footer
 		address
 			flex-direction: column
@@ -179,10 +191,4 @@ footer
 			margin-top: 0.2em
 
 	
-@media screen and (max-width: 380px)
-	header
-		.about
-			margin-top: 4em
-			.text
-				.nav
-					flex-wrap: wrap
+
