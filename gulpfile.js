@@ -2,6 +2,7 @@ const gulp            = require('gulp');
       sass            = require('gulp-sass');
       pug             = require('gulp-pug');
       autoprefixer    = require('gulp-autoprefixer');
+      browserSync     = require('browser-sync').create();
 
 
 
@@ -9,15 +10,14 @@ const gulp            = require('gulp');
 
 
 
-
-gulp.task('sass', function(){
-  return gulp.src('./assets/sass/style.sass')
+gulp.task('sass', () => {
+gulp.src('./assets/sass/style.sass')
     .pipe(sass()) // Converts Sass to CSS with gulp-sass
     .pipe(gulp.dest('./assets/css/'))
 });
 
-gulp.task('pug', function(){
-    return gulp.src('./index.pug')
+gulp.task('pug', () => {
+gulp.src('./*.pug')
       .pipe(pug())
       .pipe(gulp.dest('./'))
   });
@@ -33,8 +33,18 @@ gulp.src('./assets/css/style.css')
 );
 
 
-gulp.task('watch', function(){
+gulp.task('browserSync', () => {
+    browserSync.init({
+        server: {
+            baseDir: "./"
+        }
+    });
+});
+
+gulp.task('watch', ['browserSync', 'sass'],() => {
     gulp.watch('./assets/sass/style.sass', ['sass']);
     gulp.watch('./assets/sass/style.sass', ['autoprefix']);
-    gulp.watch('./index.pug', ['pug']);
+    gulp.watch('./*.pug', ['pug']);
+    gulp.watch('./*.pug', browserSync.reload);
+    gulp.watch('./assets/sass/style.sass', browserSync.reload);
   });
