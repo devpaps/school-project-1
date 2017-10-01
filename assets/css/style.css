@@ -6,7 +6,7 @@ body {
   margin: 0 auto; }
 
 header {
-  background: #fff url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/511975/caspar-rubin-224229.jpg) center center;
+  background: #fff url("/assets/img/header-img.jpg") center center;
   background-size: cover;
   height: 500px;
   position: relative; }
@@ -34,15 +34,24 @@ header {
         margin: 0; }
         header .text .nav ul li {
           display: inline;
-          list-style: none; }
+          list-style: none;
+          transition: background 300ms ease; }
+          header .text .nav ul li:last-child {
+            border: 1px solid #4271c5;
+            background: #6495ed;
+            padding: 0.5em 0; }
+            header .text .nav ul li:last-child:hover {
+              background: #4271c5; }
+            @media screen and (max-width: 768px) {
+              header .text .nav ul li:last-child {
+                border: none; }
+                header .text .nav ul li:last-child:hover {
+                  background: transparent; } }
           header .text .nav ul li a {
             color: #fff;
             margin: 1em;
             text-decoration: none;
-            padding: 0.5em 0;
-            transition: color 300ms ease; }
-            header .text .nav ul li a:hover {
-              color: lightgrey; }
+            padding: 0.5em 0; }
   header .about {
     width: 50%;
     position: absolute;
@@ -92,6 +101,30 @@ main {
           padding: 0 1em; }
         main .features .card article p {
           padding: 1em; }
+
+.process-analys {
+  background: #fff; }
+  .process-analys .process {
+    background: #fff; }
+    .process-analys .process h1.lead {
+      margin-bottom: 0;
+      font-size: 4em; }
+      @media screen and (max-width: 414px) {
+        .process-analys .process h1.lead {
+          font-size: 2.5em; } }
+    .process-analys .process .main-process {
+      margin-top: 2em; }
+      .process-analys .process .main-process:after {
+        content: '';
+        width: 100px;
+        height: 10px;
+        background: orange;
+        display: block;
+        margin-top: 25px; }
+    .process-analys .process .process-text {
+      margin-top: 4em; }
+      .process-analys .process .process-text p a code {
+        background: #f5f2f0; }
 
 footer {
   padding: 2em;
