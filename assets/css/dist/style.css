@@ -53,13 +53,11 @@ header {
             padding: 0.5em 0; }
             header .text .nav ul li:last-child:hover {
               background: #4271c5; }
-          @media screen and (max-width: 768px) {
-            header .text .nav ul li {
-              border: none;
-              background: transparent;
-              padding: 0.5em 0; }
-              header .text .nav ul li:hover {
-                background: transparent; } }
+            @media screen and (max-width: 768px) {
+              header .text .nav ul li:last-child {
+                border: none; }
+                header .text .nav ul li:last-child:hover {
+                  background: transparent; } }
           header .text .nav ul li a {
             color: #fff;
             margin: 1em;
