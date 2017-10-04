@@ -5,7 +5,7 @@ body
 	margin: 0 auto
 
 header
-	background: #fff url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/511975/caspar-rubin-224229.jpg) center center
+	background: #fff url('/assets/img/header-img.jpg') center center
 	background-size: cover
 	height: 500px
 	position: relative
@@ -35,15 +35,23 @@ header
 				li
 					display: inline
 					list-style: none
+					transition: background 300ms ease
+					&:last-child
+						border: 1px solid #4271c5
+						background: #6495ed
+						padding: 0.5em 0
+						&:hover
+							background: #4271c5
+						@media screen and (max-width: 768px)
+							border: none
+							&:hover
+								background: transparent
 					a
 						color: #fff
 						margin: 1em
 						text-decoration: none
 						padding: 0.5em 0
-						transition: color 300ms ease
-						&:hover
-							color: lightgrey
-	
+
 	.about
 		width: 50%
 		position: absolute
@@ -64,7 +72,6 @@ main
 			grid-template-columns: repeat(3, 1fr)
 			grid-template-rows: 1fr
 		display: flex
-		
 		.card
 			@supports not (display: grid)
 				display: flex
@@ -92,14 +99,39 @@ main
 					padding: 0 1em
 				p
 					padding: 1em
-		
+
+.process-analys
+	background: #fff
+	.process
+		background: #fff
+		h1.lead
+			margin-bottom: 0
+			font-size: 4em
+			@media screen and (max-width: 414px)
+				font-size: 2.5em
+		.main-process
+			margin-top: 2em
+			&:after
+				content: ''
+				width: 100px
+				height: 10px
+				background: orange
+				display: block
+				margin-top: 25px
+		.process-text
+			margin-top: 4em
+			p
+				a
+					code
+						background: #f5f2f0
+
 footer
 	padding: 2em
 	background: #fff
 	address
 		display: flex
 		justify-content: space-between
-		font-style: normal	
+		font-style: normal
 
 @media screen and (max-width: 968px)
 	header
@@ -175,7 +207,7 @@ footer
 					border: 1px solid #dadada
 					margin: -6em 2em 0
 					padding-top: 3em
-	
+
 @media screen and (max-width: 456px)
 	header
 		.text
@@ -194,5 +226,5 @@ footer
 		h2 + p
 			margin-top: 0.2em
 
-	
+
 

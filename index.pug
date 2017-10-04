@@ -10,11 +10,11 @@ html
 	body
 		header
 			.text.wrapper
-				a.logo(href="#" title="Gå till startsidan" tabindex="1")
+				a.logo(href="./" title="Gå till startsidan" tabindex="1")
 					h1 Lars Jönsson
 				.dropdown-menu
 					label(for="toogle") &#9776;
-					input(type="checkbox" id="toogle")
+					input(type="checkbox" id="toogle" class="toogle")
 					nav.nav.menu
 						ul
 							li
@@ -25,6 +25,8 @@ html
 								a(href="#" title="Mina färdiga arbeten" tabindex="4") Showcase
 							li
 								a(href="#" title="Maila mig" tabindex="5") Kontakt
+							li
+								a(href="process.html" title="Min process" tabindex="6") Min process
 
 			article.about
 				p div Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt labore consectetur fugit voluptas quidem quam, tempore enim optio iste neque quaerat quae nobis voluptatem doloremque quas consequatur ex dolorum error.
@@ -34,20 +36,20 @@ html
 			.features.wrapper
 				.card.test-1
 					figure
-						img.gizmo(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/511975/3.svg", alt="En bild på våran hund Gizmo")
+						img.gizmo(src="/assets/img/3.svg", alt="En bild på våran hund Gizmo")
 					article
 						p div Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam quaerat modi blanditiis numquam sit, aliquam exercitationem pariatur asperiores? Repudiandae dolore placeat doloremque impedit rem soluta dolores harum blanditiis ducimus eveniet.
 				.card.test-2
 					figure
-						img.me(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/511975/1.svg", alt="En bild på mig")
+						img.me(src="/assets/img/1.svg", alt="En bild på mig")
 					article
 						p div Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius dolore vel quam doloribus consequuntur inventore numquam in officiis quo ullam, earum obcaecati culpa doloremque, incidunt nulla error repudiandae? Ab, eum?
 				.card.test-3
 					figure
-						img.family(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/511975/2.svg", alt="En bild på min familj")
+						img.family(src="/assets/img/2.svg", alt="En bild på min familj")
 					article
-						p div Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius dolore vel quam doloribus consequuntur inventore numquam in officiis quo ullam, earum obcaecati culpa doloremque, incidunt nulla error repudiandae? Ab, eum?
-						
+						p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius dolore vel quam doloribus consequuntur inventore numquam in officiis quo ullam, earum obcaecati culpa doloremque, incidunt nulla error repudiandae? Ab, eum?
+						p Lorem ipsum dolor sit amet consectetur adipisicing elit. Est harum excepturi repudiandae, accusantium quia tempore soluta velit. Quos nisi excepturi iste quod. Autem obcaecati eligendi et veniam eius ducimus blanditiis?
 
 		footer.wrapper
 			address
@@ -67,3 +69,4 @@ html
 						a(href="mailto: info@stortego.se") info@stortego.se
 					p
 						a(href="mailto: sales@stortgo.se") sales@stortgo.se
+
