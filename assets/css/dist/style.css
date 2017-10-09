@@ -1,5 +1,7 @@
 body {
-  font-family: 'Playfair Display', serif; }
+  font-family: 'Raleway', sans-serif; }
+  body:selection {
+    background-color: #FFA300; }
 
 .wrapper {
   max-width: 960px;
@@ -24,6 +26,7 @@ header {
     header .text .logo {
       text-decoration: none; }
       header .text .logo h1 {
+        font-family: 'Playfair Display', serif;
         color: #fafafa;
         margin: 0;
         letter-spacing: 2px; }
