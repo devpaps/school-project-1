@@ -1,6 +1,8 @@
 body
-	font-family: 'Raleway', sans-serif
+	//Här anger jag en så kallad shorthand. Tycker det är ett snabbare och mer clean kod. 16px är storleken på fonten, 150% är radavståndet, sen kommer font-family.
+	font: 16px/1.5 'Raleway', sans-serif
 	::selection
+		//Här väljer jag att allt i body elementet som blir markerat kommer få den angivna färgen. Funkar inte på IOS eller Opera Mini. goo.gl/uJQ5oa
 		background-color: #FFA300
 
 .wrapper
@@ -46,7 +48,7 @@ header
 						padding: 0.5em 0
 						&:hover
 							background: #4271c5
-						@media screen and (max-width: 768px)
+						@media (max-width: 768px)
 							border: none
 							&:hover
 								background: transparent
@@ -70,6 +72,8 @@ main
 	background: #f6f6f6
 	padding-bottom: 4em
 	.features
+		//Här väljer jag att låta webbläsaren välja vad som ska användas.
+		//Om webbläsaren inte kan förstå Css Grid så kommer den att köra på flexbox. Sjävla @support funkar inte på IE 11. Flexbox funkar dock på IE 11, men med en massa buggar.
 		@supports (display: grid)
 			display: grid
 			grid-gap: 1em
@@ -83,6 +87,8 @@ main
 			background: #fff
 			border: 1px solid #dadada
 			margin: 1em 0
+			//Här vill jag använda mig av height: fit-content som är en del av CSS-grid.
+			//Då anpassar höjden sig efter innehållet i kolumnen. Men eftersom det inte finns support för alla webbläsre ännu så skippar jag det.
 			.gizmo
 				right: 40px
 			.me
@@ -99,10 +105,10 @@ main
 				top: -70px
 			article
 				background: #fff
+				padding: 1em
+				text-align: center
 				h2
 					padding: 0 1em
-				p
-					padding: 1em
 
 .process-analys
 	background: #fff
@@ -111,7 +117,7 @@ main
 		h1.lead
 			margin-bottom: 0
 			font-size: 4em
-			@media screen and (max-width: 414px)
+			@media (max-width: 414px)
 				font-size: 2.5em
 		.main-process
 			margin-top: 2em
@@ -137,7 +143,7 @@ footer
 		justify-content: space-between
 		font-style: normal
 
-@media screen and (max-width: 968px)
+@media (max-width: 968px)
 	header
 		z-index: 0
 		.text
@@ -212,7 +218,7 @@ footer
 					margin: -6em 2em 0
 					padding-top: 3em
 
-@media screen and (max-width: 456px)
+@media (max-width: 456px)
 	header
 		.text
 			width: 80%

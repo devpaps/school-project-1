@@ -1,6 +1,8 @@
 body {
-  font-family: 'Raleway', sans-serif; }
-  body:selection {
+  font: 16px/1.5 'Raleway', sans-serif; }
+  body ::-moz-selection {
+    background-color: #FFA300; }
+  body ::selection {
     background-color: #FFA300; }
 
 .wrapper {
@@ -56,7 +58,7 @@ header {
             padding: 0.5em 0; }
             header .text .nav ul li:last-child:hover {
               background: #4271c5; }
-            @media screen and (max-width: 768px) {
+            @media (max-width: 768px) {
               header .text .nav ul li:last-child {
                 border: none; }
                 header .text .nav ul li:last-child:hover {
@@ -117,11 +119,11 @@ main {
         position: relative;
         top: -70px; }
       main .features .card article {
-        background: #fff; }
+        background: #fff;
+        padding: 1em;
+        text-align: center; }
         main .features .card article h2 {
           padding: 0 1em; }
-        main .features .card article p {
-          padding: 1em; }
 
 .process-analys {
   background: #fff; }
@@ -130,7 +132,7 @@ main {
     .process-analys .process h1.lead {
       margin-bottom: 0;
       font-size: 4em; }
-      @media screen and (max-width: 414px) {
+      @media (max-width: 414px) {
         .process-analys .process h1.lead {
           font-size: 2.5em; } }
     .process-analys .process .main-process {
@@ -159,7 +161,7 @@ footer {
     justify-content: space-between;
     font-style: normal; }
 
-@media screen and (max-width: 968px) {
+@media (max-width: 968px) {
   header {
     z-index: 0; }
     header .text {
@@ -239,7 +241,7 @@ footer {
         margin: -6em 2em 0;
         padding-top: 3em; } }
 
-@media screen and (max-width: 456px) {
+@media (max-width: 456px) {
   header .text {
     width: 80%; }
     header .text .nav ul li a {
