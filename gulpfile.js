@@ -13,7 +13,7 @@ const gulp            = require('gulp');
 gulp.task('sass', () => {
 gulp.src('./assets/sass/*.sass')
     .pipe(sass()) // Converts Sass to CSS with gulp-sass
-    .pipe(gulp.dest('./assets/css/'))
+    .pipe(gulp.dest('./assets/css/dist'))
 });
 
 gulp.task('pug', () => {
