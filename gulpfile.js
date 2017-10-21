@@ -12,6 +12,7 @@ const gulp            = require('gulp');
 
 gulp.task('sass', () => {
 gulp.src('./assets/sass/*.sass')
+    .pipe(sass.sync().on('error', sass.logError))
     .pipe(sass()) // Converts Sass to CSS with gulp-sass
     .pipe(gulp.dest('./assets/css/dist'))
 });
@@ -42,9 +43,10 @@ gulp.task('browserSync', () => {
 });
 
 gulp.task('serve', ['browserSync', 'sass'],() => {
+    gulp.watch('./*.pug', browserSync.reload);
+    gulp.watch('./assets/sass/*.sass', browserSync.reload);
     gulp.watch('./assets/sass/*.sass', ['sass']);
     gulp.watch('./assets/sass/*.sass', ['autoprefix']);
     gulp.watch('./*.pug', ['pug']);
-    gulp.watch('./*.pug', browserSync.reload);
-    gulp.watch('./assets/sass/*.sass', browserSync.reload);
+
   });

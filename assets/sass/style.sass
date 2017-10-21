@@ -1,3 +1,11 @@
+*
+  &::before, &::after
+    box-sizing: border-box
+
+a, input:not([type=range]), label
+  touch-action: manipulation
+//Det här såg jag i bootstrap 4.0 css reset. Den gör så att sidan flyter på bättre för mobila användare. Den tar bort 350ms av responstiden för alla klick på elementen.
+
 body
 	//Här anger jag en så kallad shorthand. Tycker det är ett snabbare och mer clean kod. 16px är storleken på fonten, 150% är radavståndet, sen kommer font-family.
 	font: 16px/1.5 'Raleway', sans-serif
@@ -10,7 +18,7 @@ body
 	margin: 0 auto
 
 header
-	background: #fff url('/assets/img/header-img.jpg') center center
+	background: #fff url('/assets/img/header-img-opt.jpg') center center
 	background-size: cover
 	height: 500px
 	position: relative
@@ -18,7 +26,7 @@ header
 		display: flex
 		justify-content: space-between
 		align-items: center
-		padding-top: 1em
+		padding-top: 1rem
 		.logo
 			text-decoration: none
 			h1
@@ -34,7 +42,7 @@ header
 		.nav
 			display: flex
 			align-items: center
-			padding: 1em
+			padding: 1rem
 			ul
 				padding: 0
 				margin: 0
@@ -45,7 +53,10 @@ header
 					&:last-child
 						border: 1px solid #4271c5
 						background: #6495ed
-						padding: 0.5em 0
+						padding: 0.5rem 0
+						margin: 1rem
+						@media (max-width: 768px)
+							margin: 0
 						&:hover
 							background: #4271c5
 						@media (max-width: 768px)
@@ -54,41 +65,38 @@ header
 								background: transparent
 					a
 						color: #fff
-						margin: 1em
+						margin: 1rem
 						text-decoration: none
-						padding: 0.5em 0
+						padding: 0.5rem 0
 
 	.about
 		width: 50%
 		position: absolute
 		top: 50%
 		right: 0
-		margin-right: 3em
-		line-height: 1.4
+		margin-right: 3rem
 		p
 			color: #fff
 
 main
 	background: #f6f6f6
-	padding-bottom: 4em
+	padding-bottom: 4rem
 	.features
 		//Här väljer jag att låta webbläsaren välja vad som ska användas.
 		//Om webbläsaren inte kan förstå Css Grid så kommer den att köra på flexbox. Sjävla @support funkar inte på IE 11. Flexbox funkar dock på IE 11, men med en massa buggar.
 		@supports (display: grid)
 			display: grid
-			grid-gap: 1em
+			grid-gap: 1rem
 			grid-template-columns: repeat(3, 1fr)
 			grid-template-rows: 1fr
 		display: flex
+		flex-direction: column
 		.card
-			@supports not (display: grid)
-				display: flex
-				flex-direction: column
 			background: #fff
 			border: 1px solid #dadada
-			margin: 1em 0
+			margin: 1rem 0
 			//Här vill jag använda mig av height: fit-content som är en del av CSS-grid.
-			//Då anpassar höjden sig efter innehållet i kolumnen. Men eftersom det inte finns support för alla webbläsre ännu så skippar jag det.
+			//Då anpassar höjden sig efter innehållet i kolumnen automatiskt, det blir då ingen whitespace som det är nu. Men eftersom det inte finns support för alla webbläsre ännu så skippar jag det.
 			.gizmo
 				right: 40px
 			.me
@@ -105,68 +113,94 @@ main
 				top: -70px
 			article
 				background: #fff
-				padding: 1em
+				padding: 1rem
 				text-align: center
 				h2
-					padding: 0 1em
+					padding: 0 1rem
+
+//PROCESS-SIDAN
 
 .process-analys
 	background: #fff
+	padding: 0 1rem
 	.process
 		background: #fff
-		h1.lead
+		code
+			background: #f5f2f0
+		pre
+			background: #f7f7f7
+			border: 1px solid #ccc
+			margin: 10px 0
+			padding: 10px
+			border-radius: 4px
+			overflow-wrap: break-word
+			border-right: 3px solid #FFA300
+			code
+				background-color: transparent
+				padding: 0
+		h1
 			margin-bottom: 0
-			font-size: 4em
+			font-size: 4rem
 			@media (max-width: 414px)
-				font-size: 2.5em
+				font-size: 2.5rem
 		.main-process
-			margin-top: 2em
-			&:after
+			margin-top: 2rem
+			&::after
 				content: ''
 				width: 100px
 				height: 10px
 				background: orange
 				display: block
 				margin-top: 25px
+				//En liten detalj som gör det lite snyggare
 		.process-text
-			margin-top: 4em
-			p
-				a
-					code
-						background: #f5f2f0
+			margin-top: 4rem
+			.ref-text
+				margin-top: 3rem
+			.ref
+				margin-bottom: 2rem
+				p
+					margin-bottom: 0
+
+//PROCESS-SIDAN SLUT
 
 footer
-	padding: 2em
+	padding: 2rem
 	background: #fff
+	display: flex
+	justify-content: space-between
+	//Display:flex gör så att child elementen hamnatr för som inline. Justify-content fixar så att alla child element sprider ut sig så mycket dem kan inom parent elementet
 	address
-		display: flex
-		justify-content: space-between
 		font-style: normal
+
 
 @media (max-width: 968px)
 	header
 		z-index: 0
+		//Z-index gör så att elemet hanteras som lager. ungefär som i Photoshop. Man kan lägga elmenten över varandra eller under varandra. Här ligger elmentet i "botten" medans dem andra z-index ligger ovanpå.
+		height: 100vh
 		.text
 			display: block
 			.logo
 				h1
 					margin: 0
-					padding-top: 1em
+					padding-top: 1rem
 					text-align: center
 			.dropdown-menu
 				height: 100%
 				z-index: 2
 				label
-					width: 1em
+					width: 1rem
 					color: #fff
-					font-size: 1.5em
-					padding: 1em
+					font-size: 1.5rem
+					padding: 1rem
 					cursor: pointer
 					display: block
 					margin: 0 auto
 				#toogle
 					&:checked + .menu
 						display: block
+						//När jag trycker på menyn(label toggle) så visas klassen menu. Det blir ett block element som tar upp hela sidans bredd
 			.nav
 				display: none
 				text-align: center
@@ -182,28 +216,26 @@ footer
 							color: #000
 		.about
 			z-index: -1
-			width: 80%
-			top: 40%
-			padding: 0 2em
-			right: unset
-			margin-right: 0
+			top: 50%
+			left: 50%
+			padding: 0 2rem
+			margin: 0 auto
+			transform: translate(-50%, -50%)
 	main
 		.features
-			@supports (display: grid)
-				grid-template-columns: 1fr
-				grid-template-rows: 1fr
-			flex-direction: column
+			grid-template-columns: repeat(1, 1fr)
 			.test-1
 				order: 2
-				padding-top: 4em
+				//Här har jag löst ordningen som du sa. Genom att använda mig av flexbox order property.
+				padding-top: 4rem
 			.test-2
 				order: 1
 			.test-3
 				order: 3
-				padding-top: 4em
+				padding-top: 4rem
 			.card
 				background: #f6f6f6
-				margin: 1em 0
+				margin: 1rem 0
 				border: none
 				img
 					width: 200px
@@ -215,8 +247,8 @@ footer
 					margin: 0 auto
 				article
 					border: 1px solid #dadada
-					margin: -6em 2em 0
-					padding-top: 3em
+					margin: -6rem 2rem 0
+					padding-top: 3rem
 
 @media (max-width: 456px)
 	header
@@ -226,12 +258,13 @@ footer
 				ul
 					li
 						a
-							padding: 1em
+							padding: 1rem
+
+@media (max-width: 550px)
 	footer
-		address
-			flex-direction: column
-			text-align: center
+		flex-direction: column
+		text-align: center
 		h2
 			margin-bottom: 0
 		h2 + p
-			margin-top: 0.2em
+			margin-top: 0.2rem
