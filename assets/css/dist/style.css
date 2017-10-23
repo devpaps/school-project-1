@@ -35,6 +35,9 @@ header .text .logo h1 {
   margin: 0;
   letter-spacing: 2px; }
 
+header .text .logo p.exempel {
+  display: none; }
+
 header .text .dropdown-menu label {
   display: none; }
 
@@ -130,47 +133,19 @@ main .features .card img {
 
 main .features .card article {
   background: #fff;
-  padding: 1rem;
-  text-align: center; }
+  padding: 1rem; }
 
-main .features .card article h2 {
-  padding: 0 1rem; }
+main .features .card article span {
+  font-size: 0.8rem; }
 
-.process-analys {
+main .features .card article span em {
+  color: tomato; }
+
+article.process {
   background: #fff;
   padding: 0 1rem; }
 
-.process-analys .process {
-  background: #fff; }
-
-.process-analys .process code {
-  background: #f5f2f0; }
-
-.process-analys .process pre {
-  background: #f7f7f7;
-  border: 1px solid #ccc;
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 4px;
-  overflow-wrap: break-word;
-  border-right: 3px solid #FFA300; }
-
-.process-analys .process pre code {
-  background-color: transparent;
-  padding: 0; }
-
-.process-analys .process h1 {
-  margin-bottom: 0;
-  font-size: 4rem; }
-
-@media (max-width: 414px) {
-  .process-analys .process h1 {
-    font-size: 2.5rem; } }
-
-.process-analys .process .main-process {
-  margin-top: 2rem; }
-
-.process-analys .process .main-process::after {
+article.process > p:after {
   content: '';
   width: 100px;
   height: 10px;
@@ -178,16 +153,44 @@ main .features .card article h2 {
   display: block;
   margin-top: 25px; }
 
-.process-analys .process .process-text {
+article.process code {
+  background: #f5f2f0; }
+
+article.process pre {
+  background: #f7f7f7;
+  border: 1px solid #ccc;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 4px;
+  overflow: auto;
+  tab-size: 3;
+  border-right: 3px solid #FFA300; }
+
+article.process pre code {
+  background-color: transparent;
+  padding: 0; }
+
+article.process h1 {
+  margin-bottom: 0;
+  font-size: 4rem; }
+
+@media (max-width: 414px) {
+  article.process h1 {
+    font-size: 2.5rem; } }
+
+article.process .main-process {
+  margin-top: 2rem; }
+
+article.process .process-text {
   margin-top: 4rem; }
 
-.process-analys .process .process-text .ref-text {
+article.process .process-text .ref-text {
   margin-top: 3rem; }
 
-.process-analys .process .process-text .ref {
+article.process .process-text .ref {
   margin-bottom: 2rem; }
 
-.process-analys .process .process-text .ref p {
+article.process .process-text .ref p {
   margin-bottom: 0; }
 
 footer {
@@ -242,12 +245,12 @@ footer address {
     transform: translate(-50%, -50%); }
   main .features {
     grid-template-columns: repeat(1, 1fr); }
-  main .features .test-1 {
+  main .features .artikel-1 {
     order: 2;
     padding-top: 4rem; }
-  main .features .test-2 {
+  main .features .artikel-2 {
     order: 1; }
-  main .features .test-3 {
+  main .features .artikel-3 {
     order: 3;
     padding-top: 4rem; }
   main .features .card {

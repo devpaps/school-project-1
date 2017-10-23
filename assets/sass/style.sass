@@ -17,6 +17,8 @@ body
 	max-width: 960px
 	margin: 0 auto
 
+
+
 header
 	background: #fff url('/assets/img/header-img-opt.jpg') center center
 	background-size: cover
@@ -34,6 +36,8 @@ header
 				color: #fafafa
 				margin: 0
 				letter-spacing: 2px
+			p.exempel
+				display: none
 		.dropdown-menu
 			label
 				display: none
@@ -114,53 +118,57 @@ main
 			article
 				background: #fff
 				padding: 1rem
-				text-align: center
-				h2
-					padding: 0 1rem
+				span
+					font-size: 0.8rem
+					em
+						color: tomato
 
 //PROCESS-SIDAN
 
-.process-analys
+
+
+article.process
 	background: #fff
 	padding: 0 1rem
-	.process
-		background: #fff
+	>	p
+		&:after
+			content: ''
+			width: 100px
+			height: 10px
+			background: orange
+			display: block
+			margin-top: 25px
+			//En liten detalj som gör det lite snyggare
+	code
+		background: #f5f2f0
+	pre
+		background: #f7f7f7
+		border: 1px solid #ccc
+		margin: 10px 0
+		padding: 10px
+		border-radius: 4px
+		overflow: auto
+		tab-size: 3
+		border-right: 3px solid #FFA300
+
 		code
-			background: #f5f2f0
-		pre
-			background: #f7f7f7
-			border: 1px solid #ccc
-			margin: 10px 0
-			padding: 10px
-			border-radius: 4px
-			overflow-wrap: break-word
-			border-right: 3px solid #FFA300
-			code
-				background-color: transparent
-				padding: 0
-		h1
-			margin-bottom: 0
-			font-size: 4rem
-			@media (max-width: 414px)
-				font-size: 2.5rem
-		.main-process
-			margin-top: 2rem
-			&::after
-				content: ''
-				width: 100px
-				height: 10px
-				background: orange
-				display: block
-				margin-top: 25px
-				//En liten detalj som gör det lite snyggare
-		.process-text
-			margin-top: 4rem
-			.ref-text
-				margin-top: 3rem
-			.ref
-				margin-bottom: 2rem
-				p
-					margin-bottom: 0
+			background-color: transparent
+			padding: 0
+	h1
+		margin-bottom: 0
+		font-size: 4rem
+		@media (max-width: 414px)
+			font-size: 2.5rem
+	.main-process
+		margin-top: 2rem
+	.process-text
+		margin-top: 4rem
+		.ref-text
+			margin-top: 3rem
+		.ref
+			margin-bottom: 2rem
+			p
+				margin-bottom: 0
 
 //PROCESS-SIDAN SLUT
 
@@ -224,13 +232,13 @@ footer
 	main
 		.features
 			grid-template-columns: repeat(1, 1fr)
-			.test-1
+			.artikel-1
 				order: 2
 				//Här har jag löst ordningen som du sa. Genom att använda mig av flexbox order property.
 				padding-top: 4rem
-			.test-2
+			.artikel-2
 				order: 1
-			.test-3
+			.artikel-3
 				order: 3
 				padding-top: 4rem
 			.card

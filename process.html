@@ -1,60 +1,20 @@
-<!DOCTYPE html><html lang="sv"><head><meta charset="UTF-8"><title>Lars Jönsson</title><meta name="viewport" content="width=device-width, initial-scale=1"><link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"><link rel="stylesheet" href="/assets/css/dist/print.css"><link rel="stylesheet" href="/assets/css/dist/style.css"></head><body><header><div class="text wrapper"><a class="logo" href="./" title="Gå till startsidan" tabindex="1"><h1>Lars Jönsson</h1></a><div class="dropdown-menu"><label for="toogle">&#9776;</label><input type="checkbox" id="toogle"><nav class="nav menu"><ul><li><a href="#" title="Det här är jag" tabindex="2">Om mig</a></li><li><a href="service.html" title="Vad jag kan erbjuda dig" tabindex="3">Mina tjänster</a></li><li><a href="#" title="Mina färdiga arbeten" tabindex="4">Showcase</a></li><li><a href="#" title="Maila mig" tabindex="5">Kontakt</a></li><li><a href="process.html" title="Min process" tabindex="6">Min process</a></li></ul></nav></div></div></header><div class="wrapper"><div class="process-analys"><article class="process"><h1>Min processanalys</h1><h3>Hur tänkte jag här...?</h3><div class="main-process"><p>Den här uppgiften tycker jag har varit givande för mig. Jag har fått klurat en hel del. Bra att ni lagt in att vi ska tänka på stylingen för <code>@print</code>
-regeln, då jag aldrig använt mig av den förut.
-</p></div><div class="process-text"><p>Jag har valt att använda mig av <code>CSS Grid</code> <strong>(2017)</strong> för mig layout. För jag anser att det är ett lättare sätt att jobba med när man vill göra en layout.
-Dels för att det blir mindre kod att skriva samt att det är lättare att överskåda och förstå syntaxen. Sedan tycker jag det blir väldigt krångligt med float
-när man har många element som är floatade. Jag tycker det är svårt att debugga. <br />
-Men jag tycker det ändå är lättare att förstå <code>CSS Grid</code> <strong>(2017)</strong>. Jag antar att det kanske är en smaksak till en början. Sedan så
-tänkte jag på om jag skulle köra på floats. I och med att det är en så enkel layout att göra float den här uppgiften.
-</p><p>Man kan säga att det nästan
-blev mer kod när jag använde mig av <code>CSS Grid</code> <strong>(2017)</strong> på ett vis. Exemplet nedan är hur jag skulle använda mig av ser ut
-<code>floats</code>.
+<!DOCTYPE html><html lang="sv"><head><meta charset="UTF-8"><title>Lars Jönsson</title><meta name="viewport" content="width=device-width, initial-scale=1"><link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"><link rel="stylesheet" href="/assets/css/dist/print.css"><link rel="stylesheet" href="/assets/css/dist/style.css"></head><body><header><div class="text wrapper"><a class="logo" href="./" title="Gå till startsidan" tabindex="1"><h1>Lars Jönsson</h1></a><div class="dropdown-menu"><label for="toogle">&#9776;</label><input type="checkbox" id="toogle"><nav class="nav menu"><ul><li><a href="#" title="Det här är jag" tabindex="2">Om mig</a></li><li><a href="#" title="Vad jag kan erbjuda dig" tabindex="3">Mina tjänster</a></li><li><a href="#" title="Mina färdiga arbeten" tabindex="4">Showcase</a></li><li><a href="#" title="Maila mig" tabindex="5">Kontakt</a></li><li><a href="process.html" title="Min process" tabindex="6">Min process</a></li></ul></nav></div></div></header><div class="wrapper"><article class="process"><h1>Min processanalys</h1><h3>Hur tänkte jag här...?</h3><p>Den här uppgiften tycker jag har varit givande för mig. Jag har fått klurat en hel del. Bra att ni lagt in att vi ska tänka på stylingen för <code>@print</code> regeln, då jag aldrig använt mig av den förut.</p><div class="main-process"><div class="process-text"><h2>Layouten</h2><p>Jag har valt att använda mig av <code>CSS Grid</code> <strong>(2017)</strong> för mig layout. För jag anser att det är ett lättare sätt att jobba med när man vill göra en layout. Dels för att det blir mindre kod att skriva samt att det är lättare att överskåda och förstå syntaxen. Sedan tycker jag det blir väldigt krångligt med float när man har många element som är floatade. Jag tycker det är svårt att debugga. <br /> Men jag tycker det ändå är lättare att förstå <code>CSS Grid</code> <strong>(2017)</strong>. Jag antar att det kanske är en smaksak till en början. Sedan så tänkte jag på om jag skulle köra på floats. I och med att det är en så enkel layout att göra float den här uppgiften.</p><p>Man kan säga att det nästan blev mer kod när jag använde mig av <code>CSS Grid</code> <strong>(2017)</strong> på ett vis. Exemplet nedan är hur jag skulle använda mig av ser ut <code>floats</code>.</p><br><br><strong>Exempel:</strong><pre><code>.element {
+	float: left
+}
 
-<br />
-<br />
-<strong>Exempel:</strong>
-<pre>
-	<code>
-	.element {
-		float: left
+.clearfix:after {
+	content:" ";
+	display:table;
+	clear:both;
+}
+</code></pre><br><p>Medans det blir med kod med <code>CSS Grids</code> <strong>(2017)</strong>. Men det är på ett ju också för att man kan göra så mycket mera med den egenskapen. Som en fallback så har jag först använt mig av <code>@supports</code> <strong>(2017)</strong> regeln. Den tycker jag är ett måste om jag vill att så många webbläsare kan ta del av min layout eller vad det nu är jag ska åstakomma.<br/ ><br /> När man använder sig av <code>@supports</code> <strong>(2017)</strong> så kommer din webbläsare automatiskt veta om den har någon support för <code>@supports</code> <strong>(2017)</strong> regeln. Gör den inte det så kommer den att läsa på nästa block i CSS filen och agera utefter vilken kod som står där.</p><br><br><strong>Exempel:</strong><pre><code>.features }
+	@supports (display: grid) {
+		display: grid
+		grid-gap: 1rem
+		grid-template-columns: repeat(3, 1fr)
+		grid-template-rows: 1fr
 	}
-
-	.clearfix:after {
-		content:" ";
-		display:table;
-		clear:both;
+	display: flex
+	flex-direction: column
 	}
-	</code>
-</pre>
-<br />
-</p><p>Medans det blir med kod med <code>CSS Grids</code> <strong>(2017)</strong>. Men det är på ett ju också för att man kan göra så mycket mera med den egenskapen.
-Som en fallback så har jag först använt mig av <code>@supports</code> <strong>(2017)</strong> regeln. Den tycker jag är ett måste om jag vill att
-så många webbläsare kan ta del av min layout eller vad det nu är jag ska åstakomma.
-<br />
-<br />
-När man använder sig av <code>@supports</code> <strong>(2017)</strong> så kommer din webbläsare automatiskt veta om den har någon
-support för <code>@supports</code> <strong>(2017)</strong> regeln. Gör den inte det så kommer den att läsa på nästa rad i CSS filen
-och agera utefter vilken kod som står där.
-<br />
-<br />
-<strong>Exempel:</strong>
-<pre>
-	<code>
-	.features }
-		@supports (display: grid) {
-			display: grid
-			grid-gap: 1rem
-			grid-template-columns: repeat(3, 1fr)
-			grid-template-rows: 1fr
-		}
-		display: flex
-		flex-direction: column
-		}
-	</code>
-</pre>
-
-
-
-
-
-
-</p><h2 class="ref-text">Referenser</h2><div class="ref"><p>MDN Web Docs (2017). <em> CSS Grid Layout.</em> Tillgänglig: <br /></p><em>https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout</em> [2017-10-21]<p>MDN Web Works (2017). <em>@supports.</em> Tillgänglig: <br /></p><em>https://developer.mozilla.org/en-US/docs/Web/CSS/@supports</em> [2017-10-21]</div></div></article></div></div></body></html>
+</code></pre><br><br><h2>Menyn</h2><p>När jag gjorde navigationen så såg jag att det skulle bli trångt när man kollade på små skärmar. Och eftersom vi inte fick använda oss av Javascript så gjorde jag en interaktiv meny med hjälp av enbart CSS. Jag använder mig utav en label och en input som jag sedan binder till klassen menu. Så när jag klickar på meny ikonen så klickar jag i själva verket på labeln som är bunden till input. Detta är ett så kallade ett Css hack. Det är alltså inte något som är "officiellt".<br /> Jag använde mig av en <code>ul</code> lista eftersom min meny inte innehåller några siffror, eller den ska inte göra det. Skulle jag skriva om ett recept så skulle jag skriva <code>ol</code> då den listan kanske är bäst med siffor så man kan se i vilken ordning man ska göra sakerna som receptet säger.</p></div><h2 class="ref-text">Referenser</h2><div class="ref"><p>MDN Web Docs (2017). <em> CSS Grid Layout.</em> Tillgänglig: <br /></p><em>https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout</em> &nbsp; [2017-10-21]<p>MDN Web Works (2017). <em>@supports.</em> Tillgänglig: <br /></p><em>https://developer.mozilla.org/en-US/docs/Web/CSS/@supports</em> &nbsp; [2017-10-21]</div></div></article></div></body></html>

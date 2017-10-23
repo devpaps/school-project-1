@@ -1,3 +1,6 @@
 @media print {
-  header, nav, footer {
-    display: none; } }
+  header .wrapper .dropdown-menu {
+    display: none; }
+  main .features .page-break {
+    display: block;
+    page-break-before: always; } }
