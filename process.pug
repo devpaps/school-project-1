@@ -4,15 +4,16 @@ html(lang="sv")
 		meta(charset='UTF-8')
 		title Lars Jönsson
 		meta(name='viewport', content='width=device-width, initial-scale=1')
+		//Kodstycket ovan innebär att sidan skalar sig efter användarens pixlar på skärmen
 		link(href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700', rel='stylesheet')
 		link(href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet")
 		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css')
-		link(rel='stylesheet', href='/assets/css/dist/print.css', media="print")
-		link(rel='stylesheet', href='/assets/css/dist/style.css')
+		link(rel='stylesheet', href='./assets/css/dist/print.css', media="print")
+		link(rel='stylesheet', href='./assets/css/dist/style.css', media="screen")
 	body
 		header
 			.text.wrapper
-				a.logo(href="./" title="Gå till startsidan" tabindex="1")
+				a.logo(href="./index.html" title="Gå till startsidan" tabindex="1")
 					h1 Lars Jönsson
 				.dropdown-menu
 					label(for="toogle") &#9776;
@@ -31,7 +32,7 @@ html(lang="sv")
 								a(href="process.html" title="Min process" tabindex="6") Min process
 
 		.wrapper
-		/**/
+			// Här är min wrapper för att behålla allt innehåll inom 960px
 			article.process
 				h2 Min processanalys
 				h3 Hur tänkte jag här...?
@@ -53,6 +54,7 @@ html(lang="sv")
 						br
 						strong Exempel:
 						pre
+							// Pre elementet är att något som ska skrivas ut med en annan font, vanligtvis ett kodstycke som här. Fonten som används är "monospace". Därefter så har jag elementet code. Code används när det ska skrivas ut kod som ska vara i ett block. Alltså inte utföra radbrytningar när skärmen blir mindre.
 							code.
 								.element {
 									float: left
@@ -86,22 +88,43 @@ html(lang="sv")
 						br
 
 						h2 Menyn
-
 						p När jag gjorde navigationen så såg jag att det skulle bli trångt när man kollade på små skärmar. Och eftersom vi inte fick använda oss av Javascript/jQuery så gjorde jag en interaktiv meny med hjälp av enbart CSS. Jag använder mig utav en label och en input som jag sedan binder till klassen menu. Så när jag klickar på meny ikonen så klickar jag i själva verket på labeln som är bunden till input. Detta är ett så kallade ett Css hack. Det är alltså inte något som är officiellt tillvägagångssätt.<br /> Jag använde mig av en <code>ul</code> lista eftersom min meny inte innehåller några siffror, eller den ska inte göra det när det är en navigering. Skulle jag skriva om ett recept så skulle jag använda mig av <code>ol</code> elementet då den listan kanske är bäst med siffor så man kan se i vilken ordning man ska göra sakerna som receptet säger.
 
-						h2 De tre kolumnerna
 
+						h2 Övrigt
+						p På ett ställe har jag använt mig av en egenskap som heter <code>Pseudo-element</code> <strong>(2017)</strong>. Den här till för att styla vissa delar av ett element. Eller lägga till en ikon bredvid en länk. En liten rolig eller snarare knepig sak att komma ihåg är att man helst ska använda sig av dubbla <code>::</code> tecken när man anger ett <code>Pseudo-element</code>. Det är för att det finns något som också heter <code>Pseudo-class</code> och det använder sig av <code>:</code>. Man har gjort såhär för att lättare separera dem olika egenskaperna.
+						br
+						br
+						<strong>Exempel Pseudo-element:</strong>
+						pre
+							code.
+								h1::first-letter {
+									color: pink;
+									font-size: 24px;
+									text-transform: lowercase;
+								}
+						br
 
-
-
+						<strong>Exempel Class-element:</strong>
+						pre
+							code.
+								a:hover {
+									color: red;
+									background: black;
+								}
 
 
 					h2.ref-text Referenser
 					.referenser
 						p MDN Web Docs (2017). <em> CSS Grid Layout.</em> Tillgänglig: <br />
 						a(href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout") <em>https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout</em>
+						//em element har jag här dels för att det är inline och för att det gör texten kursiv samt att det är bra för accessibility (skärmläsare).
 						span &nbsp; [2017-10-21]
 
 						p MDN Web Works (2017). <em>@supports.</em> Tillgänglig: <br />
 						a(href="https://developer.mozilla.org/en-US/docs/Web/CSS/@supports") <em>https://developer.mozilla.org/en-US/docs/Web/CSS/@supports</em>
 						span &nbsp; [2017-10-21]
+
+						p MDN Web Works (2017). <em>Pseudo-elements.</em> Tillgänglig: <br />
+						a(href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements") <em>https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements</em>
+						span &nbsp; [2017-10-24]

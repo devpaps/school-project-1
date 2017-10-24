@@ -1,4 +1,52 @@
-<!DOCTYPE html><html lang="sv"><head><meta charset="UTF-8"><title>Lars Jönsson</title><meta name="viewport" content="width=device-width, initial-scale=1"><link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"><link rel="stylesheet" href="/assets/css/dist/print.css" media="print"><link rel="stylesheet" href="/assets/css/dist/style.css"></head><body><header><div class="text wrapper"><a class="logo" href="./" title="Gå till startsidan" tabindex="1"><h1>Lars Jönsson</h1></a><div class="dropdown-menu"><label for="toogle">&#9776;</label><input type="checkbox" id="toogle"><nav class="nav menu"><ul><li><a href="#" title="Det här är jag" tabindex="2">Om mig</a></li><li><a href="#" title="Vad jag kan erbjuda dig" tabindex="3">Mina tjänster</a></li><li><a href="#" title="Mina färdiga arbeten" tabindex="4">Showcase</a></li><li><a href="#" title="Maila mig" tabindex="5">Kontakt</a></li><li><a href="process.html" title="Min process" tabindex="6">Min process</a></li></ul></nav></div></div></header><div class="wrapper"><article class="process"><h2>Min processanalys</h2><h3>Hur tänkte jag här...?</h3><p>Den här uppgiften tycker jag har varit givande för mig. Jag har fått klurat en hel del. Bra att ni lagt in att vi ska tänka på stylingen för <code>@print</code> regeln, då jag aldrig använt mig av den förut.</p><div class="main-process"><div class="process-text"><h2>Allmänt</h2><p>Jag har gjort sidan responsiv för alla slags skärmar. Det jag har använt mig av är några <code>@media</code> queries. Det är en enkel layout på den här sidan så jag behöver inte så många <code>@media</code> queries för att göra den responsiv. När man tittar på webbsidan genom Chrome Inspector tools och väljer att se med 4K upplösning så ser man tydligt att det är wrapper på 960px som är centrerat. När man sedan skalar ned bilden så följer headerns bakgrundsbild med. Detta är på grund av att jag har tagit till hjälp av <code>background-size: cover</code> egenskapen med värdet, cover. Cover gör så att bilden skalar ut hela innehållet i ett element istället för att repetera sig själv i X, eller Y-led flera gånger om inte bilder är stor nog att fylla hela elementet. Men då när man skalar ned sidan så komemr det en brytpunkt på 968px som brukar vara storleken på en iPad. Därefter händer det grejer. Dem tre artiklarna lägger sig lodrätt för att anpassas till småskärmar. Detta görs med en <code>@media</code> queries. Samt att den responsiva navigeringen tittar fram som tre streck. Även kallat "Hamburger menu".</p><br><h2>Layouten</h2><p>Jag har valt att använda mig av <code>CSS Grid</code> <strong>(2017)</strong> för mig layout. För jag anser att det är ett lättare sätt att jobba med när man vill göra en layout. Dels för att det blir mindre kod att skriva samt att det är lättare att överskåda och förstå syntaxen. Sedan tycker jag det blir väldigt krångligt med float när man har många element som är floatade. Jag tycker det är svårt att debugga. <br /> Men jag tycker det ändå är lättare att förstå <code>CSS Grid</code> <strong>(2017)</strong>. Jag antar att det kanske är en smaksak till en början. Sedan så tänkte jag på om jag skulle köra på floats. I och med att det är en så enkel layout att göra float den här uppgiften.</p><p>Till min header så har jag använt mig av <code>vh</code> egenskapen. Det innebär att själva header elementets höjd anpassar sig i höjled utefter hur många pixlar hög användarens skärm är. Alltså, min header fyller hela skärmytan på användarens display. Jag har använt mig av <code>vh</code> enbart för att jag tycker det är snyggare.</p><p>Jag har använt mig av egenskapen <code>order</code> för att skifta plats på mina artiklar. Den passar perfekt eftersom jag har en fallback på <code>flexbox</code>.</p><p>Man kan säga att det nästan blev mer kod när jag använde mig av <code>CSS Grid</code> <strong>(2017)</strong> på ett vis. Exemplet nedan är hur jag skulle använda mig av <code>floats</code>. Till fallback har jag använt mig av Flexbox som är tillgängligt för alla utom IE som innhåller några buggar, men inget som ska vara synligt på den här sidan. För att använda mig av min fallback så använder jag något som heter <code>@supports</code>.</p><br><br><strong>Exempel:</strong><pre><code>.element {
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8">
+    <title>Lars Jönsson</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Kodstycket ovan innebär att sidan skalar sig efter användarens pixlar på skärmen-->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="./assets/css/dist/print.css" media="print">
+    <link rel="stylesheet" href="./assets/css/dist/style.css" media="screen">
+  </head>
+  <body>
+    <header>
+      <div class="text wrapper"><a class="logo" href="./index.html" title="Gå till startsidan" tabindex="1">
+          <h1>Lars Jönsson</h1></a>
+        <div class="dropdown-menu">
+          <label for="toogle">&#9776;</label>
+          <input type="checkbox" id="toogle">
+          <nav class="nav menu">
+            <ul>
+              <li><a href="#" title="Det här är jag" tabindex="2">Om mig</a></li>
+              <li><a href="#" title="Vad jag kan erbjuda dig" tabindex="3">Mina tjänster</a></li>
+              <li><a href="#" title="Mina färdiga arbeten" tabindex="4">Showcase</a></li>
+              <li><a href="#" title="Maila mig" tabindex="5">Kontakt</a></li>
+              <li><a href="process.html" title="Min process" tabindex="6">Min process</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <div class="wrapper">
+      <!-- Här är min wrapper för att behålla allt innehåll inom 960px-->
+      <article class="process">
+        <h2>Min processanalys</h2>
+        <h3>Hur tänkte jag här...?</h3>
+        <p>Den här uppgiften tycker jag har varit givande för mig. Jag har fått klurat en hel del. Bra att ni lagt in att vi ska tänka på stylingen för <code>@print</code> regeln, då jag aldrig använt mig av den förut.</p>
+        <div class="main-process">
+          <div class="process-text">
+            <h2>Allmänt</h2>
+            <p>Jag har gjort sidan responsiv för alla slags skärmar. Det jag har använt mig av är några <code>@media</code> queries. Det är en enkel layout på den här sidan så jag behöver inte så många <code>@media</code> queries för att göra den responsiv. När man tittar på webbsidan genom Chrome Inspector tools och väljer att se med 4K upplösning så ser man tydligt att det är wrapper på 960px som är centrerat. När man sedan skalar ned bilden så följer headerns bakgrundsbild med. Detta är på grund av att jag har tagit till hjälp av <code>background-size: cover</code> egenskapen med värdet, cover. Cover gör så att bilden skalar ut hela innehållet i ett element istället för att repetera sig själv i X, eller Y-led flera gånger om inte bilder är stor nog att fylla hela elementet. Men då när man skalar ned sidan så komemr det en brytpunkt på 968px som brukar vara storleken på en iPad. Därefter händer det grejer. Dem tre artiklarna lägger sig lodrätt för att anpassas till småskärmar. Detta görs med en <code>@media</code> queries. Samt att den responsiva navigeringen tittar fram som tre streck. Även kallat "Hamburger menu".</p><br>
+            <h2>Layouten</h2>
+            <p>Jag har valt att använda mig av <code>CSS Grid</code> <strong>(2017)</strong> för mig layout. För jag anser att det är ett lättare sätt att jobba med när man vill göra en layout. Dels för att det blir mindre kod att skriva samt att det är lättare att överskåda och förstå syntaxen. Sedan tycker jag det blir väldigt krångligt med float när man har många element som är floatade. Jag tycker det är svårt att debugga. <br /> Men jag tycker det ändå är lättare att förstå <code>CSS Grid</code> <strong>(2017)</strong>. Jag antar att det kanske är en smaksak till en början. Sedan så tänkte jag på om jag skulle köra på floats. I och med att det är en så enkel layout att göra float den här uppgiften.</p>
+            <p>Till min header så har jag använt mig av <code>vh</code> egenskapen. Det innebär att själva header elementets höjd anpassar sig i höjled utefter hur många pixlar hög användarens skärm är. Alltså, min header fyller hela skärmytan på användarens display. Jag har använt mig av <code>vh</code> enbart för att jag tycker det är snyggare.</p>
+            <p>Jag har använt mig av egenskapen <code>order</code> för att skifta plats på mina artiklar. Den passar perfekt eftersom jag har en fallback på <code>flexbox</code>.</p>
+            <p>Man kan säga att det nästan blev mer kod när jag använde mig av <code>CSS Grid</code> <strong>(2017)</strong> på ett vis. Exemplet nedan är hur jag skulle använda mig av <code>floats</code>. Till fallback har jag använt mig av Flexbox som är tillgängligt för alla utom IE som innhåller några buggar, men inget som ska vara synligt på den här sidan. För att använda mig av min fallback så använder jag något som heter <code>@supports</code>.</p><br><br><strong>Exempel:</strong>
+            <pre>
+              <!-- Pre elementet är att något som ska skrivas ut med en annan font, vanligtvis ett kodstycke som här. Fonten som används är "monospace". Därefter så har jag elementet code. Code används när det ska skrivas ut kod som ska vara i ett block. Alltså inte utföra radbrytningar när skärmen blir mindre.--><code>.element {
 	float: left
 }
 
@@ -7,7 +55,9 @@
 	display:table;
 	clear:both;
 }
-</code></pre><br><p>Det blir ju mer kod med <code>CSS Grids</code> <strong>(2017)</strong>. Men det är på ett ju också för att man kan göra så mycket mera med den egenskapen. Och jag vet att ju mer kod man har, vare sig det är HTML, JS eller CSS så påverkar det hastighetet för slutanvändaren. Dock handlar det här fallet om några millisekunder antar jag. Som en fallback så har jag använt mig av <code>@supports</code> <strong>(2017)</strong> regeln. Jag tycker det är ett måste om användaren vill att de flesta webbläsare ska kunna ta del av min layout eller vad det nu är jag ska åstakomma.<br/> <br/> När man använder sig av <code>@supports</code> <strong>(2017)</strong> så kommer din webbläsare automatiskt veta om den har någon support för <code>@supports</code> <strong>(2017)</strong> regeln. Gör den inte det så kommer den att läsa på nästa block i CSS filen och agera utefter vilken kod som står där.</p><br><br><strong>Exempel:</strong><pre><code>.features }
+</code></pre><br>
+            <p>Det blir ju mer kod med <code>CSS Grids</code> <strong>(2017)</strong>. Men det är på ett ju också för att man kan göra så mycket mera med den egenskapen. Och jag vet att ju mer kod man har, vare sig det är HTML, JS eller CSS så påverkar det hastighetet för slutanvändaren. Dock handlar det här fallet om några millisekunder antar jag. Som en fallback så har jag använt mig av <code>@supports</code> <strong>(2017)</strong> regeln. Jag tycker det är ett måste om användaren vill att de flesta webbläsare ska kunna ta del av min layout eller vad det nu är jag ska åstakomma.<br/> <br/> När man använder sig av <code>@supports</code> <strong>(2017)</strong> så kommer din webbläsare automatiskt veta om den har någon support för <code>@supports</code> <strong>(2017)</strong> regeln. Gör den inte det så kommer den att läsa på nästa block i CSS filen och agera utefter vilken kod som står där.</p><br><br><strong>Exempel:</strong>
+            <pre><code>.features }
 	@supports (display: grid) {
 		display: grid
 		grid-gap: 1rem
@@ -17,4 +67,32 @@
 	display: flex
 	flex-direction: column
 	}
-</code></pre><br><br><h2>Menyn</h2><p>När jag gjorde navigationen så såg jag att det skulle bli trångt när man kollade på små skärmar. Och eftersom vi inte fick använda oss av Javascript/jQuery så gjorde jag en interaktiv meny med hjälp av enbart CSS. Jag använder mig utav en label och en input som jag sedan binder till klassen menu. Så när jag klickar på meny ikonen så klickar jag i själva verket på labeln som är bunden till input. Detta är ett så kallade ett Css hack. Det är alltså inte något som är officiellt tillvägagångssätt.<br /> Jag använde mig av en <code>ul</code> lista eftersom min meny inte innehåller några siffror, eller den ska inte göra det när det är en navigering. Skulle jag skriva om ett recept så skulle jag använda mig av <code>ol</code> elementet då den listan kanske är bäst med siffor så man kan se i vilken ordning man ska göra sakerna som receptet säger.</p><h2>De tre kolumnerna</h2></div><h2 class="ref-text">Referenser</h2><div class="referenser"><p>MDN Web Docs (2017). <em> CSS Grid Layout.</em> Tillgänglig: <br /></p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout"><em>https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout</em></a><span>&nbsp; [2017-10-21]</span><p>MDN Web Works (2017). <em>@supports.</em> Tillgänglig: <br /></p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@supports"><em>https://developer.mozilla.org/en-US/docs/Web/CSS/@supports</em></a><span>&nbsp; [2017-10-21]</span></div></div></article></div></body></html>
+</code></pre><br><br>
+            <h2>Menyn</h2>
+            <p>När jag gjorde navigationen så såg jag att det skulle bli trångt när man kollade på små skärmar. Och eftersom vi inte fick använda oss av Javascript/jQuery så gjorde jag en interaktiv meny med hjälp av enbart CSS. Jag använder mig utav en label och en input som jag sedan binder till klassen menu. Så när jag klickar på meny ikonen så klickar jag i själva verket på labeln som är bunden till input. Detta är ett så kallade ett Css hack. Det är alltså inte något som är officiellt tillvägagångssätt.<br /> Jag använde mig av en <code>ul</code> lista eftersom min meny inte innehåller några siffror, eller den ska inte göra det när det är en navigering. Skulle jag skriva om ett recept så skulle jag använda mig av <code>ol</code> elementet då den listan kanske är bäst med siffor så man kan se i vilken ordning man ska göra sakerna som receptet säger.</p>
+            <h2>Övrigt</h2>
+            <p>På ett ställe har jag använt mig av en egenskap som heter <code>Pseudo-element</code> <strong>(2017)</strong>. Den här till för att styla vissa delar av ett element. Eller lägga till en ikon bredvid en länk. En liten rolig eller snarare knepig sak att komma ihåg är att man helst ska använda sig av dubbla <code>::</code> tecken när man anger ett <code>Pseudo-element</code>. Det är för att det finns något som också heter <code>Pseudo-class</code> och det använder sig av <code>:</code>. Man har gjort såhär för att lättare separera dem olika egenskaperna.</p><br><br><strong>Exempel Pseudo-element:</strong>
+            <pre><code>h1::first-letter {
+	color: pink;
+	font-size: 24px;
+	text-transform: lowercase;
+}</code></pre><br><strong>Exempel Class-element:</strong>
+            <pre><code>a:hover {
+	color: red;
+	background: black;
+}
+
+</code></pre>
+          </div>
+          <h2 class="ref-text">Referenser</h2>
+          <div class="referenser">
+            <p>MDN Web Docs (2017). <em> CSS Grid Layout.</em> Tillgänglig: <br /></p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout"><em>https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout</em></a>
+            <!--em element har jag här dels för att det är inline och för att det gör texten kursiv samt att det är bra för accessibility (skärmläsare).--><span>&nbsp; [2017-10-21]</span>
+            <p>MDN Web Works (2017). <em>@supports.</em> Tillgänglig: <br /></p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@supports"><em>https://developer.mozilla.org/en-US/docs/Web/CSS/@supports</em></a><span>&nbsp; [2017-10-21]</span>
+            <p>MDN Web Works (2017). <em>Pseudo-elements.</em> Tillgänglig: <br /></p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements"><em>https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements</em></a><span>&nbsp; [2017-10-24]</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </body>
+</html>

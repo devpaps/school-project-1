@@ -1,7 +1,8 @@
 @media print {
   header .wrapper .dropdown-menu {
-    display: none; } }
+    display: none; }
+  main .features div.card {
+    page-break-after: always; } }
 
-.page-break {
-  display: block;
-  page-break-before: always; }
+@page {
+  size: A4; }

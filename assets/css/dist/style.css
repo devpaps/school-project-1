@@ -1,7 +1,12 @@
+@charset "UTF-8";
+* {
+  /*Stjärnan anger att den ska gälla för alla element som finns och pseudo koderna anger även att det gäller dem. Helst ska man inte ange detta i ett riktigt case, då det kan slöa ned webbsidan.*/ }
+
 *::before, *::after {
   box-sizing: border-box; }
 
 body {
+  /*Här anger jag en så kallad shorthand. Tycker det är ett snabbare och mer clean kod. 16px är storleken på fonten, 1.5 är radavståndet, sen kommer font-family.*/
   font: 16px/1.5 'Raleway', sans-serif; }
 
 .wrapper {
@@ -9,7 +14,7 @@ body {
   margin: 0 auto; }
 
 header {
-  background: #fff url("/assets/img/header-img-opt.jpg") center center;
+  background: url("/assets/img/header-img.jpg") center center;
   background-size: cover;
   height: 500px;
   position: relative; }
@@ -50,7 +55,8 @@ header .text .nav ul {
 header .text .nav ul li {
   display: inline;
   list-style: none;
-  transition: background 300ms ease; }
+  transition: background 300ms ease;
+  /*Transition gör så att jag kan "animera" färger,skuggor. Flytta element, rotera element etc., det gör man med transition: transform*/ }
 
 header .text .nav ul li:last-child {
   border: 1px solid #4271c5;
@@ -92,8 +98,10 @@ main {
   padding-bottom: 4rem; }
 
 main .features {
+  /*Här väljer jag att låta webbläsaren välja vad som ska användas. Om webbläsaren inte kan förstå Css Grid så kommer den att köra på flexbox. Sjävla @support funkar inte på IE 11. Flexbox funkar dock på IE 11, men med en massa buggar. Css Validator agner det här som error. Men det är ju inte det. Jag har kollat Css Validator på github och det dem jobbar på problemet med att ta bort det som en varning. https://github.com/w3c/css-validator/issues/71*/
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  /*Flex är en dimensionell. Medans Grid är två dimensionell. Flex kan hantera antingen bara en kolumn eller rad, Grid kan hantera båda samtidigt. Här säger jag att jag vill ha allt i .features klassen uppställt som i en kolumn om inte webbläsaren kan förstå CSS Grid.*/ }
 
 @supports (display: grid) {
   main .features {
@@ -105,7 +113,8 @@ main .features {
 main .features .card {
   background: #fff;
   border: 1px solid #dadada;
-  margin: 1rem 0; }
+  margin: 1rem 0;
+  /*Här vill jag använda mig av height: fit-content som är en del av CSS-grid. Då anpassar höjden sig efter innehållet i kolumnen automatiskt, det blir då ingen whitespace som det är nu. Men eftersom det inte finns support för alla webbläsre ännu så skippar jag det.*/ }
 
 main .features .card .gizmo {
   right: 40px; }
@@ -135,11 +144,14 @@ main .features .card article span {
 main .features .card article span em {
   color: tomato; }
 
+/*PROCESS-SIDAN*/
 article.process {
   background: #fff;
-  padding: 0 1rem; }
+  padding: 0 1rem;
+  /*En selektor som säger att i klassen(erna) process så markera det första p elemtet som dyker upp. Har jag flera .process klasser så markeras bara den första.*/ }
 
-article.process > p:after {
+article.process > p::after {
+  /*Psuedo-element = :: och Psuedo-class = : */
   content: '';
   width: 200px;
   height: 5px;
@@ -147,7 +159,8 @@ article.process > p:after {
   display: block;
   margin: 25px auto 0;
   position: relative;
-  top: 25px; }
+  top: 25px;
+  /*En liten detalj som gör det lite snyggare. Jag använder mig av något som heter pseudo-element. Det använder man när man vill styla vissa delar av ett element, som att ändra första bokstaven i en mening.*/ }
 
 article.process code {
   background: #f5f2f0; }
@@ -192,6 +205,7 @@ article.process .main-process .referenser p {
 article.process .main-process .referenser a {
   display: inline; }
 
+/*PROCESS-SIDAN SLUT*/
 footer {
   padding: 2rem;
   background: #fff;
