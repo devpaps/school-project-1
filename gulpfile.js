@@ -19,7 +19,9 @@ gulp.src('./assets/sass/*.sass')
 
 gulp.task('pug', () => {
 gulp.src('./*.pug')
-      .pipe(pug())
+      .pipe(pug({
+          pretty: true
+      }))
       .pipe(gulp.dest('./'))
   });
 

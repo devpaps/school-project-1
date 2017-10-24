@@ -2,16 +2,10 @@
   &::before, &::after
     box-sizing: border-box
 
-a, input:not([type=range]), label
-  touch-action: manipulation
-//Det här såg jag i bootstrap 4.0 css reset. Den gör så att sidan flyter på bättre för mobila användare. Den tar bort 350ms av responstiden för alla klick på elementen.
-
 body
 	//Här anger jag en så kallad shorthand. Tycker det är ett snabbare och mer clean kod. 16px är storleken på fonten, 150% är radavståndet, sen kommer font-family.
 	font: 16px/1.5 'Raleway', sans-serif
-	::selection
-		//Här väljer jag att allt i body elementet som blir markerat kommer få den angivna färgen. Funkar inte på IOS eller Opera Mini. goo.gl/uJQ5oa
-		background-color: #FFA300
+
 
 .wrapper
 	max-width: 960px
@@ -88,6 +82,7 @@ main
 	.features
 		//Här väljer jag att låta webbläsaren välja vad som ska användas.
 		//Om webbläsaren inte kan förstå Css Grid så kommer den att köra på flexbox. Sjävla @support funkar inte på IE 11. Flexbox funkar dock på IE 11, men med en massa buggar.
+		//Css Validator agner det här som error. Men det är ju inte det. Jag har kollat Css Validator på github och det dem jobbar på problemet med att ta bort det som en varning. https://github.com/w3c/css-validator/issues/71
 		@supports (display: grid)
 			display: grid
 			grid-gap: 1rem
@@ -133,11 +128,13 @@ article.process
 	>	p
 		&:after
 			content: ''
-			width: 100px
-			height: 10px
+			width: 200px
+			height: 5px
 			background: orange
 			display: block
-			margin-top: 25px
+			margin: 25px auto 0
+			position: relative
+			top: 25px
 			//En liten detalj som gör det lite snyggare
 	code
 		background: #f5f2f0
@@ -154,21 +151,23 @@ article.process
 		code
 			background-color: transparent
 			padding: 0
-	h1
+	>	h2
 		margin-bottom: 0
 		font-size: 4rem
 		@media (max-width: 414px)
 			font-size: 2.5rem
 	.main-process
 		margin-top: 2rem
-	.process-text
-		margin-top: 4rem
-		.ref-text
+		.process-text
+			margin-top: 4rem
+		h2.ref-text
 			margin-top: 3rem
-		.ref
+		.referenser
 			margin-bottom: 2rem
 			p
 				margin-bottom: 0
+			a
+				display: inline
 
 //PROCESS-SIDAN SLUT
 
@@ -217,6 +216,9 @@ footer
 				padding: 0
 				ul
 					li
+						&:last-child
+							border: none
+							margin: 0
 						a
 							display: block
 							border-bottom: 1px solid lightgrey
@@ -226,7 +228,8 @@ footer
 			z-index: -1
 			top: 50%
 			left: 50%
-			padding: 0 2rem
+			width: 85%
+			text-align: center
 			margin: 0 auto
 			transform: translate(-50%, -50%)
 	main
@@ -261,7 +264,7 @@ footer
 @media (max-width: 456px)
 	header
 		.text
-			width: 80%
+			width: 100%
 			.nav
 				ul
 					li

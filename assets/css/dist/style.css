@@ -1,14 +1,8 @@
 *::before, *::after {
   box-sizing: border-box; }
 
-a, input:not([type=range]), label {
-  touch-action: manipulation; }
-
 body {
   font: 16px/1.5 'Raleway', sans-serif; }
-
-body ::selection {
-  background-color: #FFA300; }
 
 .wrapper {
   max-width: 960px;
@@ -147,11 +141,13 @@ article.process {
 
 article.process > p:after {
   content: '';
-  width: 100px;
-  height: 10px;
+  width: 200px;
+  height: 5px;
   background: orange;
   display: block;
-  margin-top: 25px; }
+  margin: 25px auto 0;
+  position: relative;
+  top: 25px; }
 
 article.process code {
   background: #f5f2f0; }
@@ -170,28 +166,31 @@ article.process pre code {
   background-color: transparent;
   padding: 0; }
 
-article.process h1 {
+article.process > h2 {
   margin-bottom: 0;
   font-size: 4rem; }
 
 @media (max-width: 414px) {
-  article.process h1 {
+  article.process > h2 {
     font-size: 2.5rem; } }
 
 article.process .main-process {
   margin-top: 2rem; }
 
-article.process .process-text {
+article.process .main-process .process-text {
   margin-top: 4rem; }
 
-article.process .process-text .ref-text {
+article.process .main-process h2.ref-text {
   margin-top: 3rem; }
 
-article.process .process-text .ref {
+article.process .main-process .referenser {
   margin-bottom: 2rem; }
 
-article.process .process-text .ref p {
+article.process .main-process .referenser p {
   margin-bottom: 0; }
+
+article.process .main-process .referenser a {
+  display: inline; }
 
 footer {
   padding: 2rem;
@@ -231,6 +230,9 @@ footer address {
     width: 100%;
     background: #fff;
     padding: 0; }
+  header .text .nav ul li:last-child {
+    border: none;
+    margin: 0; }
   header .text .nav ul li a {
     display: block;
     border-bottom: 1px solid lightgrey;
@@ -240,7 +242,8 @@ footer address {
     z-index: -1;
     top: 50%;
     left: 50%;
-    padding: 0 2rem;
+    width: 85%;
+    text-align: center;
     margin: 0 auto;
     transform: translate(-50%, -50%); }
   main .features {
@@ -272,7 +275,7 @@ footer address {
 
 @media (max-width: 456px) {
   header .text {
-    width: 80%; }
+    width: 100%; }
   header .text .nav ul li a {
     padding: 1rem; } }
 
