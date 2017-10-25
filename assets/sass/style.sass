@@ -1,26 +1,24 @@
-*
-  &::before, &::after
-    box-sizing: border-box
-		/*Stjärnan anger att den ska gälla för alla element som finns och pseudo koderna anger även att det gäller dem. Helst ska man inte ange detta i ett riktigt case, då det kan slöa ned webbsidan.*/
-
 body
 	/*Här anger jag en så kallad shorthand. Tycker det är ett snabbare och mer clean kod. 16px är storleken på fonten, 1.5 är radavståndet, sen kommer font-family.*/
-	font: 16px/1.5 'Raleway', sans-serif
+	font: 16px/1.8 'Raleway', sans-serif
 
 .wrapper
 	max-width: 960px
 	margin: 0 auto
 
 header
-	background: url('/assets/img/header-img.jpg') center center
-	background-size: cover
 	height: 500px
-	position: relative
+	img
+		object-fit: cover
+		width: 100%
+		height: inherit
+		position: absolute
 	.text
 		display: flex
 		justify-content: space-between
 		align-items: center
 		padding-top: 1rem
+		position: relative
 		.logo
 			text-decoration: none
 			h1
@@ -69,7 +67,7 @@ header
 	.about
 		width: 50%
 		position: absolute
-		top: 50%
+		top: 40%
 		right: 0
 		margin-right: 3rem
 		p
@@ -144,15 +142,12 @@ article.process
 		overflow: auto
 		tab-size: 3
 		border-right: 3px solid #FFA300
-
 		code
 			background-color: transparent
 			padding: 0
 	>	h2
 		margin-bottom: 0
 		font-size: 4rem
-		@media (max-width: 414px)
-			font-size: 2.5rem
 	.main-process
 		margin-top: 2rem
 		.process-text
@@ -171,7 +166,6 @@ article.process
 
 footer
 	padding: 2rem
-	background: #fff
 	display: flex
 	justify-content: space-between
 	//Display:flex gör så att child elementen hamnatr för som inline. Justify-content fixar så att alla child element sprider ut sig så mycket dem kan inom parent elementet
@@ -184,6 +178,7 @@ footer
 		z-index: 0
 		//Z-index gör så att elemet hanteras som lager. ungefär som i Photoshop. Man kan lägga elmenten över varandra eller under varandra. Här ligger elmentet i "botten" medans dem andra z-index ligger ovanpå.
 		height: 100vh
+		//vh innebär att den ska fylla ut 100% på höjden av viewportens yta. Alltså skärmen
 		.text
 			display: block
 			.logo
@@ -222,6 +217,7 @@ footer
 							border-bottom: 1px solid lightgrey
 							margin: 0
 							color: #000
+							padding: 1rem
 		.about
 			z-index: -1
 			top: 50%
@@ -234,8 +230,8 @@ footer
 		.features
 			grid-template-columns: repeat(1, 1fr)
 			.artikel-1
-				order: 2
 				//Här har jag löst ordningen som du sa. Genom att använda mig av flexbox order property.
+				order: 2
 				padding-top: 4rem
 			.artikel-2
 				order: 1
@@ -259,15 +255,18 @@ footer
 					margin: -6rem 2rem 0
 					padding-top: 3rem
 
-@media (max-width: 456px)
-	header
-		.text
-			width: 100%
-			.nav
+@media (max-width: 730px)
+	.process
+		.main-process
+			.process-text
 				ul
 					li
-						a
-							padding: 1rem
+						margin: 0.5rem 0
+
+@media (max-width: 616px)
+	article.process
+		> h2
+			font-size: 2.5rem
 
 @media (max-width: 550px)
 	footer
@@ -278,4 +277,7 @@ footer
 		h2 + p
 			margin-top: 0.2rem
 
-
+@media (max-width: 320px)
+	article.process
+		> h2
+			font-size: 1.9rem

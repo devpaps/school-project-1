@@ -1,29 +1,27 @@
 @charset "UTF-8";
-* {
-  /*Stjärnan anger att den ska gälla för alla element som finns och pseudo koderna anger även att det gäller dem. Helst ska man inte ange detta i ett riktigt case, då det kan slöa ned webbsidan.*/ }
-
-*::before, *::after {
-  box-sizing: border-box; }
-
 body {
   /*Här anger jag en så kallad shorthand. Tycker det är ett snabbare och mer clean kod. 16px är storleken på fonten, 1.5 är radavståndet, sen kommer font-family.*/
-  font: 16px/1.5 'Raleway', sans-serif; }
+  font: 16px/1.8 'Raleway', sans-serif; }
 
 .wrapper {
   max-width: 960px;
   margin: 0 auto; }
 
 header {
-  background: url("/assets/img/header-img.jpg") center center;
-  background-size: cover;
-  height: 500px;
-  position: relative; }
+  height: 500px; }
+
+header img {
+  object-fit: cover;
+  width: 100%;
+  height: inherit;
+  position: absolute; }
 
 header .text {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 1rem; }
+  padding-top: 1rem;
+  position: relative; }
 
 header .text .logo {
   text-decoration: none; }
@@ -86,7 +84,7 @@ header .text .nav ul li a {
 header .about {
   width: 50%;
   position: absolute;
-  top: 50%;
+  top: 40%;
   right: 0;
   margin-right: 3rem; }
 
@@ -183,10 +181,6 @@ article.process > h2 {
   margin-bottom: 0;
   font-size: 4rem; }
 
-@media (max-width: 414px) {
-  article.process > h2 {
-    font-size: 2.5rem; } }
-
 article.process .main-process {
   margin-top: 2rem; }
 
@@ -208,7 +202,6 @@ article.process .main-process .referenser a {
 /*PROCESS-SIDAN SLUT*/
 footer {
   padding: 2rem;
-  background: #fff;
   display: flex;
   justify-content: space-between; }
 
@@ -251,7 +244,8 @@ footer address {
     display: block;
     border-bottom: 1px solid lightgrey;
     margin: 0;
-    color: #000; }
+    color: #000;
+    padding: 1rem; }
   header .about {
     z-index: -1;
     top: 50%;
@@ -287,11 +281,13 @@ footer address {
     margin: -6rem 2rem 0;
     padding-top: 3rem; } }
 
-@media (max-width: 456px) {
-  header .text {
-    width: 100%; }
-  header .text .nav ul li a {
-    padding: 1rem; } }
+@media (max-width: 730px) {
+  .process .main-process .process-text ul li {
+    margin: 0.5rem 0; } }
+
+@media (max-width: 616px) {
+  article.process > h2 {
+    font-size: 2.5rem; } }
 
 @media (max-width: 550px) {
   footer {
@@ -301,3 +297,7 @@ footer address {
     margin-bottom: 0; }
   footer h2 + p {
     margin-top: 0.2rem; } }
+
+@media (max-width: 320px) {
+  article.process > h2 {
+    font-size: 1.9rem; } }

@@ -6,12 +6,13 @@ html(lang="sv")
 		meta(name='viewport', content='width=device-width, initial-scale=1')
 		//Kodstycket ovan innebär att sidan skalar sig efter användarens pixlar på skärmen
 		link(href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700', rel='stylesheet')
-		link(href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet")
+		link(href="https://fonts.googleapis.com/css?family=Raleway:400,700", rel="stylesheet")
 		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css')
 		link(rel='stylesheet', href='./assets/css/dist/print.css', media="print")
-		link(rel='stylesheet', href='./assets/css/dist/style.css', media="screen")
+		link(rel='stylesheet', href='./assets/css/dist/style.css', media="all")
 	body
 		header
+			img(src="./assets/img/header-img.jpg", alt="")
 			.text.wrapper
 				a.logo(href="./index.html" title="Gå till startsidan" tabindex="1")
 					h1 Lars Jönsson
@@ -40,14 +41,29 @@ html(lang="sv")
 				.main-process
 					.process-text
 						h2 Allmänt
-						p Jag har gjort sidan responsiv för alla slags skärmar. Det jag har använt mig av är några <code>@media</code> queries. Det är en enkel layout på den här sidan så jag behöver inte så många <code>@media</code> queries för att göra den responsiv. När man tittar på webbsidan genom Chrome Inspector tools och väljer att se med 4K upplösning så ser man tydligt att det är wrapper på 960px som är centrerat. När man sedan skalar ned bilden så följer headerns bakgrundsbild med. Detta är på grund av att jag har tagit till hjälp av <code>background-size: cover</code> egenskapen med värdet, cover. Cover gör så att bilden skalar ut hela innehållet i ett element istället för att repetera sig själv i X, eller Y-led flera gånger om inte bilder är stor nog att fylla hela elementet. Men då när man skalar ned sidan så komemr det en brytpunkt på 968px som brukar vara storleken på en iPad. Därefter händer det grejer. Dem tre artiklarna lägger sig lodrätt för att anpassas till småskärmar. Detta görs med en <code>@media</code> queries. Samt att den responsiva navigeringen tittar fram som tre streck. Även kallat "Hamburger menu".
+						p Jag har gjort sidan responsiv för alla slags skärmar. Det jag har använt mig av är några <code>@media</code> queries. Det är en enkel layout på den här sidan så jag behöver inte så många <code>@media</code> queries för att göra den responsiv. När man tittar på webbsidan genom Chrome Inspector tools och väljer att se med 4K upplösning så ser man tydligt att det är wrapper på 960px som är centrerat och headern är följsam, responsiv. När man sedan skalar ned bilden så följer headerns bakgrundsbild med. Detta är på grund av att jag har tagit till hjälp av <code>object-fit: cover</code> egenskapen med värdet, cover. Cover gör så att bilden skalar ut hela innehållet i ett element istället för att behålla sin ordinarie storlek och kanske inte passa in i elementet. Anger man då width: 100% så kommer bilden att sträckas ut helt inom viewporten. Då måste man ange <code>object-fit: cover</code> egenskapen för att den ska fylla ut bilden. Egentligen är det samma sak med <code>background-size: cover</code> egenskapen, fast då måste du lägga in bilden genom css och inte i HTML som är att föredra just för sökmotorerna lättare ska kunna ranka dig och för accessibility med skärmläsare. Lägger du in en bild genom css så kan du ju inte ge den en <code>alt</code> för att ange vad bilden innehåller. Det är bra också att ange om bilden inte laddas in på korrekt sätt, då ser man vad bilden föreställer. När man skalar ned sidan så kommer det en brytpunkt på 968px som brukar vara storleken på en iPad. Därefter händer det grejer. Dem tre artiklarna lägger sig lodrätt för att anpassas till småskärmar. Detta görs med en <code>@media</code> queries. Samt att den responsiva navigeringen tittar fram som tre streck. Även kallat "Hamburger menu".
+						.break
+						<br><br> Jag har använt mig av flera <code>@media</code> queries, dem är: <br>
+
+						<ul>
+							<li><strong>968px</strong> - Här händer det mesta. Responsiv meny, artiklarna blir en kolumn i stället för tre</li>
+							<li><strong>730px</strong> - Den här listan får lite mer utrymme på höjden</li>
+							<li><strong>616px</strong> - <code>h1</code> taggen blir mindre </li>
+							<li><strong>550px</strong> - <code>footer</code> elementet blir till en kolumn och <code>h2</code> taggen blir mindre</li>
+							<li><strong>320px</strong> - <code>h2</code> taggen här på sidan blir mindre</li>
+						</ul>
+						p <strong>*Nu har jag inte gått in på detaljer, det måste ses i källfilen.*</strong>
+
 						br
+
 						h2 Layouten
 						p Jag har valt att använda mig av <code>CSS Grid</code> <strong>(2017)</strong> för mig layout. För jag anser att det är ett lättare sätt att jobba med när man vill göra en layout. Dels för att det blir mindre kod att skriva samt att det är lättare att överskåda och förstå syntaxen. Sedan tycker jag det blir väldigt krångligt med float när man har många element som är floatade. Jag tycker det är svårt att debugga. <br /> Men jag tycker det ändå är lättare att förstå <code>CSS Grid</code> <strong>(2017)</strong>. Jag antar att det kanske är en smaksak till en början. Sedan så tänkte jag på om jag skulle köra på floats. I och med att det är en så enkel layout att göra float den här uppgiften.
 
 						p Till min header så har jag använt mig av <code>vh</code> egenskapen. Det innebär att själva header elementets höjd anpassar sig i höjled utefter hur många pixlar hög användarens skärm är. Alltså, min header fyller hela skärmytan på användarens display. Jag har använt mig av <code>vh</code> enbart för att jag tycker det är snyggare.
 
 						p Jag har använt mig av egenskapen <code>order</code> för att skifta plats på mina artiklar. Den passar perfekt eftersom jag har en fallback på <code>flexbox</code>.
+
+						.break
 
 						p Man kan säga att det nästan blev mer kod när jag använde mig av <code>CSS Grid</code> <strong>(2017)</strong> på ett vis. Exemplet nedan är hur jag skulle använda mig av <code>floats</code>. Till fallback har jag använt mig av Flexbox som är tillgängligt för alla utom IE som innhåller några buggar, men inget som ska vara synligt på den här sidan. För att använda mig av min fallback så använder jag något som heter <code>@supports</code>.
 						br
@@ -67,7 +83,11 @@ html(lang="sv")
 								}
 
 						br
-						p Det blir ju mer kod med <code>CSS Grids</code> <strong>(2017)</strong>. Men det är på ett ju också för att man kan göra så mycket mera med den egenskapen. Och jag vet att ju mer kod man har, vare sig det är HTML, JS eller CSS så påverkar det hastighetet för slutanvändaren. Dock handlar det här fallet om några millisekunder antar jag. Som en fallback så har jag använt mig av <code>@supports</code> <strong>(2017)</strong> regeln. Jag tycker det är ett måste om användaren vill att de flesta webbläsare ska kunna ta del av min layout eller vad det nu är jag ska åstakomma.<br/> <br/> När man använder sig av <code>@supports</code> <strong>(2017)</strong> så kommer din webbläsare automatiskt veta om den har någon support för <code>@supports</code> <strong>(2017)</strong> regeln. Gör den inte det så kommer den att läsa på nästa block i CSS filen och agera utefter vilken kod som står där.
+						p Det blir ju mer kod med <code>CSS Grids</code> <strong>(2017)</strong>. Men det är på ett ju också för att man kan göra så mycket mera med den egenskapen. Och jag vet att ju mer kod man har, vare sig det är HTML, JS eller CSS så påverkar det hastighetet för slutanvändaren. Dock handlar det här fallet om några millisekunder antar jag. Som en fallback så har jag använt mig av <code>@supports</code> <strong>(2017)</strong> regeln. Jag tycker det är ett måste om användaren vill att de flesta webbläsare ska kunna ta del av min layout eller vad det nu är jag ska åstakomma.
+
+						.break
+
+						<br/> <br/> När man använder sig av <code>@supports</code> <strong>(2017)</strong> så kommer din webbläsare automatiskt veta om den har någon support för <code>@supports</code> <strong>(2017)</strong> regeln. Gör den inte det så kommer den att läsa på nästa block i CSS filen och agera utefter vilken kod som står där.
 						br
 						br
 						<strong>Exempel:</strong>
@@ -90,6 +110,7 @@ html(lang="sv")
 						h2 Menyn
 						p När jag gjorde navigationen så såg jag att det skulle bli trångt när man kollade på små skärmar. Och eftersom vi inte fick använda oss av Javascript/jQuery så gjorde jag en interaktiv meny med hjälp av enbart CSS. Jag använder mig utav en label och en input som jag sedan binder till klassen menu. Så när jag klickar på meny ikonen så klickar jag i själva verket på labeln som är bunden till input. Detta är ett så kallade ett Css hack. Det är alltså inte något som är officiellt tillvägagångssätt.<br /> Jag använde mig av en <code>ul</code> lista eftersom min meny inte innehåller några siffror, eller den ska inte göra det när det är en navigering. Skulle jag skriva om ett recept så skulle jag använda mig av <code>ol</code> elementet då den listan kanske är bäst med siffor så man kan se i vilken ordning man ska göra sakerna som receptet säger.
 
+						.break
 
 						h2 Övrigt
 						p På ett ställe har jag använt mig av en egenskap som heter <code>Pseudo-element</code> <strong>(2017)</strong>. Den här till för att styla vissa delar av ett element. Eller lägga till en ikon bredvid en länk. En liten rolig eller snarare knepig sak att komma ihåg är att man helst ska använda sig av dubbla <code>::</code> tecken när man anger ett <code>Pseudo-element</code>. Det är för att det finns något som också heter <code>Pseudo-class</code> och det använder sig av <code>:</code>. Man har gjort såhär för att lättare separera dem olika egenskaperna.
@@ -113,6 +134,7 @@ html(lang="sv")
 									background: black;
 								}
 
+					.break
 
 					h2.ref-text Referenser
 					.referenser

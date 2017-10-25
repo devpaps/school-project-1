@@ -1,8 +1,11 @@
 @media print {
-  header .wrapper .dropdown-menu {
+  header img {
     display: none; }
-  main .features div.card {
-    page-break-after: always; } }
+  header .wrapper .dropdown-menu {
+    display: none; } }
 
 @page {
   size: A4; }
+
+.break {
+  page-break-after: always; }

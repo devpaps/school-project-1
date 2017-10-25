@@ -1,13 +1,14 @@
 @media print
   header
+    img
+      display: none
     .wrapper
       .dropdown-menu
         display: none
 
-  main
-    .features
-      div.card
-        page-break-after: always
-
 @page
   size: A4
+
+.break
+  //Lagt till en klass här som gör en brytning till en ny sida när man ska skriva ut.
+  page-break-after: always
